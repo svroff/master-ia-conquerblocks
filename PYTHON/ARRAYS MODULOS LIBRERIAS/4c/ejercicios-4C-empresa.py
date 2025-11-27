@@ -23,6 +23,9 @@ datos = np.array(
         ["2022-02-15", "Componente 2", "Lote D", 95],
         ["2022-03-01", "Componente 1", "Lote E", 75],
         ["2022-03-15", "Componente 2", "Lote F", 90],
+        ["2022-03-18", "Componente 3", "Lote G", 92],
+        ["2022-03-21", "Componente 3", "Lote H", 91],
+        ["2022-04-13", "Componente 3", "Lote I", 78],
     ]
 )
 
@@ -62,16 +65,32 @@ peores_puntuaciones = puntuaciones[mascara_calidad]
 
 # componentes que sean 'componente 1' y su puntuacion sea mayor a 70
 
-mascara_calidad = (puntuaciones > 70) & (componentes == "Componente 1")
-puntuaciones_mascara = puntuaciones[mascara_calidad]
-lotes_mascara = lotes[mascara_calidad]
-
+mascara_calidad_1 = (puntuaciones > 70) & (componentes == "Componente 1")
+puntuaciones_mascara = puntuaciones[mascara_calidad_1]
+lotes_mascara = lotes[mascara_calidad_1]
+"""
 print(
     f"Los lotes que son Componente 1 con una puntuación superior a 70 son: {lotes_mascara} con una puntuacion de {puntuaciones_mascara}"
 )
-
+"""
 
 # ------------ cuántos componentes se produjeron en cada mes
+formato_fechas = fechas.astype("datetime64")
+fechas_en_meses = formato_fechas.astype("datetime64[M]")  # cogemos solo los meses
 
+meses_unicos, cantidad_por_mes = np.unique(fechas_en_meses, return_counts=True)
+"""for mes, cantidad in zip(meses_unicos, cantidad_por_mes):
+    print(f"En el mes {mes} se produjeron {cantidad} componentes")"""
 
 # ------------ cuál es la puntuación de calidad promedio de cada tipo de componente
+"""componentes_unicos = np.unique(componentes)
+print(f"Hay los siguientes componentes: {componentes_unicos}")
+
+for c in componentes_unicos:
+    mask_componentes = componentes == c
+    calidad_promedio = np.mean(puntuaciones[mask_componentes])
+    max_puntuacion = np.max(puntuaciones[mask_componentes])
+    print(f"La calidad promedio de {c} es de {calidad_promedio:.2f}")
+    print(f"La puntuación máxima de {c} es de {max_puntuacion}")"""
+
+# Imprime una lista de todos los componentes y sus lotes, ordenados por puntuación de mayor a menor.
