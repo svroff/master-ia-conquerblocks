@@ -1,4 +1,5 @@
 # TRABAJANDO CON TUPLAS
+import numpy as np
 
 # Crea una tupla con tres elementos y imprime por pantalla cada uno de ellos en una nueva linea.
 """personajes = ("Luffy", "Naruto", "Ichigo")
@@ -17,10 +18,36 @@ print(type(suma_enteros))"""
 personajes = ("Luffy", "Naruto", "Ichigo")
 
 # 5. Crea un script que dada una tupla de números devuelva el producto de todos los números pares.
+enteros = (12, 23, 54, 2, 6, 7, 213)
+"""total = 1
+
+for e in enteros:
+    if e % 2 == 0:
+        total = total * e
+
+condicion_pares = np.array(enteros) % 2 == 0
+total_np = np.prod(enteros)"""
+
+
 # 6. Crea un script que dada una tupla de números, devuelva la tupla con los numeros ordeandos en orden descendente.
-# 7. Crea un script que dada una tupla con números enteros repetidos, elimine los duplicados. (Puedes usar sets).
+
+copia_array = np.array(enteros)
+orden_descendiente = np.sort(copia_array)[::-1]
+
+# 7. Crea un script que dada una tupla con números enteros repetidos, elimine los duplicados.
+enteros_ = (2, 2, 2, 2, 24, 5, 3, 6, 6, 6, 6, 7, 2, 8, 9)
+set_enteros = set(enteros_)
+copia_enteros = np.array(enteros_)
+enteros_ordenados = np.unique(copia_enteros)
+
 # 8. Crea un script que dada una tupla y un numero entero, devuelve verdadero si el numero se encuentra en la tupla y falso en el caso contrario.
+"""print(f"Dada la tupla {enteros_} elige un entero y te diré si se encuentra o no.")
+valor_a_buscar = int(input("Elige: "))
+
+print(valor_a_buscar in enteros_)"""
+
 # 9. Crea un script que dadas dos tuplas cree una tupla resultante de la union de ambas.
+
 # 10.  Crea un script que dada una tupla de números devuelva e máximo y el mínimo.
 # 11.  Crea un script que dada una tupla con strings devuelva el string más largo y el más corto. (Prueba añadiendo key=len a las funciones max y min).
 # 12.  Crea un script que dada una tupla devuelva el contenido en orden revertido.
