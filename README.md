@@ -29,6 +29,7 @@ Mi cinturón de herramientas actual incluye:
 
 Aquí marco mis hitos conquistados:
 cd
+
 - [x] **Configuración del Entorno:** VS Code, Git, Virtual Environments.
 - [x] **Python Core:** Sintaxis, Estructuras de datos, Funciones.
 - [ ] **NumPy & Análisis de Datos:** Arrays, Slicing, Boolean Masking. 🚧 _(Trabajando en ello)_
