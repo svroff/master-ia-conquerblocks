@@ -16,6 +16,7 @@ mes y que le devuelva la cantidad en euros a comisionar ese mes.
 
 
 
+
 numero_serie1 = int(input('Cuántos serie 1 has vendido?: '))
 numero_plus = int(input('Cuántos serie plus has vendido?: '))
 numero_todoterreno = int(input('Cuántos todoterreno has vendido?: '))
