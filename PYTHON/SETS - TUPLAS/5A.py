@@ -72,10 +72,10 @@ heroes_marvel = (
 print(min(heroes_marvel, key=len))"""
 # 12.  Crea un script que dada una tupla devuelva el contenido en orden revertido.
 
-hm_orden_revertido = heroes_marvel[::-1]
+"""hm_orden_revertido = heroes_marvel[::-1]"""
 
 # 13.  Crea un script que dada una tupla de tuplas, donde cada tupla interna contiene dos elementos, devuelva una nueva tupla en la que cada elemento sea la suma de los dos elementos de la tupla interna correspondiente.
-tupla_de_tuplas = ((10, 5), (20, 30), (7, 7), (100, -50))
+"""tupla_de_tuplas = ((10, 5), (20, 30), (7, 7), (100, -50))
 
 suma_tuplas = np.array(tupla_de_tuplas).sum(axis=1)
 
@@ -89,7 +89,52 @@ for t in tupla_de_tuplas:
     resultados.append(s)
 
 sum_tuplas = tuple(resultados)
-print(resultados)
 
 # ¿Serías capaz de escribir el código para ordenar la lista (usando sorted(lista, key=...)) basándote en quién ha encontrado más bugs? (Pista: usa lambda).
-# hackers = [("Neo", 10, 5), ("Trinity", 9, 50), ("Morpheus", 8, 20)]
+hackers = [("Neo", 10, 5), ("Trinity", 9, 50), ("Morpheus", 8, 20)]
+hackers_ordenados = sorted(hackers, key=lambda x: x[2], reverse=True)
+print(hackers_ordenados)"""
+
+# 14. Crea un set y elimina uno de sus elementos.
+mi_set = {"Andrea", "Sergio", 192, True}
+mi_set.discard(192)
+
+# 15. Crea un set vacío.
+mi_set_vacio = set()
+# 16. Crea dos sets y encuentra su union, su intersección y su diferencia.
+primer_set = {"mimi", "titi", "sisi", "neo", "andreia", "hela"}
+segundo_set = {"ares", "daira", "yaki", "mishi", "hela"}
+
+union = set.union(primer_set, segundo_set)
+inter = set.intersection(primer_set, segundo_set)
+difer = set.difference(segundo_set, primer_set)
+
+# 17. Crea un script que dados dos sets cree uno nuevo que contenga solo los elementos comunes de ambos.
+interseccion = primer_set & segundo_set
+
+# 18. Crea un script que dado un set con números devuelva el numero máximo y mínimo.
+set_a = {15, 8, 92, 4, 15}
+max(set_a)
+min(set_a)
+
+# 19. Crea un script que dados dos sets cree uno nuevo solo con los elementos únicos de cada uno de los sets.
+set_c = primer_set ^ segundo_set
+
+# 20. Crea un set con colores y comprueba si cierto color se encuentra en el set.
+colores = {"rojo", "azul", "verde", "amarillo", "rojo"}
+"""color = input("Di un color: ")
+
+if color in colores:
+    print(f"El set contiene el color: {color}")
+else:
+    print(f"No está el color: {color}")"""
+
+# 21. Crea un script que dados dos sets cree un nuevo set con los elementos que están en el primer set pero no en el segundo.
+
+diff = primer_set - segundo_set
+
+# 22. Crea un script que dado un set de enteros devuelva el producto de todos los números dentro del set.
+set_a = {15, 8, 92, 4, 15}
+list_set = list(set_a)
+arr_list_set = np.array(list_set)
+print(arr_list_set.prod())
