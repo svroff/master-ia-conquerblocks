@@ -138,3 +138,4 @@ set_a = {15, 8, 92, 4, 15}
 list_set = list(set_a)
 arr_list_set = np.array(list_set)
 print(arr_list_set.prod())
+
