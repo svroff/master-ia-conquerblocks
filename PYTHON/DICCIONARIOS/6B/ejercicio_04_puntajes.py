@@ -11,24 +11,21 @@
 # --- TU CÓDIGO EMPIEZA AQUÍ ---
 
 # 1. Crea el diccionario con 3 o 4 jugadores y sus puntuaciones (Hardcoded)
-puntos = {
-    "Juan" : 192,
-    "Claus" : 187,
-    "Lorena" : 199,
-    "Sara" : 176
-}
+puntos = {"Juan": 192, "Claus": 187, "Lorena": 199, "Sara": 176}
 
 # 2. Calcula el puntaje más alto (Usa max() sobre los valores)
 max_puntos = max(puntos.values())
-jugador_max_puntos = puntos[max_puntos]
-
-print(f'El puntaje más alto lo tiene  con un total de {max_puntos}')
 
 # 3. Calcula el promedio (Suma total / Cantidad de jugadores)
 suma_total = sum(puntos.values())
 cantidad_jugadores = len(puntos)
-print("-" * 30)
 promedio = suma_total / cantidad_jugadores
-print(f'El promedio es de {promedio}')
 
+# 4. Mostrar la cantidad total de jugadores (len).
 # 4. Imprime el reporte completo'''
+print("\n")
+print(f"El puntaje más alto lo tiene es de {max_puntos}")
+print("-" * 30)
+print(f"El promedio es de {promedio}")
+print("-" * 30)
+print(f"La cantidad total es de {cantidad_jugadores} jugadores")
