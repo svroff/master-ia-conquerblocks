@@ -1,62 +1,84 @@
-# [cite: 4-7]
-# GESTIÓN DE EMPLEADOS:
-# Imagina que eres el gerente de recursos humanos de una empresa y
-# necesitas gestionar la información de los empleados.
+# ==========================================
+# 📄 HOJA 6C: GESTIÓN DE EMPLEADOS (DICCIONARIOS ANIDADOS)
+# ==========================================
+# OBJETIVO:
+# Trabajar con un diccionario que contiene otros diccionarios (base de datos).
+# Realizar consultas, actualizaciones y cálculos de agrupación.
 
-# Cada empleado tiene un nombre, salario y departamento al que pertenece.
-
-# Implementa un programa en Python que permita:
-# 1. Agregar nuevos empleados (Diccionario anidado).
-# 2. Actualizar el salario de un empleado existente.
-# 3. Mostrar la lista completa de empleados.
-# 4. Calcular el promedio salarial por departamento.
-
-# --- TU CÓDIGO EMPIEZA AQUÍ ---
-# Diccionario con 3 empleados
+# Base de datos de empleados
+# Clave: ID del empleado (Entero)
+# Valor: Diccionario con sus datos personales
 empleados = {
-    "emp_01": {"nombre": "Sergi", "salario": 1500, "dept": "PACS"},
-    "emp_02": {"nombre": "David", "salario": 2500, "dept": "PACS"},
-    "emp_03": {"nombre": "Maribel", "salario": 2800, "dept": "CDI-SAP"},
+    101: {"nombre": "Ana", "edad": 30, "departamento": "Ventas", "salario": 3000},
+    102: {"nombre": "Luis", "edad": 25, "departamento": "IT", "salario": 4000},
+    103: {"nombre": "Carlos", "edad": 40, "departamento": "Ventas", "salario": 3500},
+    104: {"nombre": "Maria", "edad": 35, "departamento": "IT", "salario": 4200},
+    105: {"nombre": "Sofia", "edad": 28, "departamento": "RRHH", "salario": 2800},
 }
-# 1. Agregar nuevos empleados (Diccionario anidado).
-empleados["emp_04"] = {"nombre": "Alejandro", "salario": 1300, "dept": "CPD"}
+print("-" * 50)
 
-# 2. Actualizar el salario de un empleado existente.
-empleados["emp_01"]["salario"] = 1800
+print("\n--- INICIO DEL PROGRAMA ---")
 
-# 3. Mostrar la lista completa de empleados.
-print("*" * 15)
-print("LISTA DE EMPLEADOS")
-print("*" * 15)
+# ---------------------------------------------------------
+# MISIÓN 1: CONSULTA BÁSICA
+# Recorre el diccionario e imprime:
+# "ID: [id] | Nombre: [nombre] | Dept: [departamento]"
+# ---------------------------------------------------------
+print("\n--- 1. LISTADO DE EMPLEADOS ---")
 for clave, valor in empleados.items():
-    print("-" * 20)
-    print(f"Empleado: {clave}")
-    for v in valor:
-        print(f"{v}:    {valor[v]}")
+    print(f'ID: {clave} | Nombre: {valor["nombre"]} | Dept: {valor["departamento"]}')
 
+# ---------------------------------------------------------
+# MISIÓN 2: ACTUALIZACIÓN SALARIAL
+# Sube el sueldo de 'Carlos' (ID 103) a 3800.
+# Imprime su nuevo salario para confirmar.
+# ---------------------------------------------------------
+print("\n--- 2. ACTUALIZACIÓN DE SUELDO ---")
+empleados[103]["salario"] = 3800
+print(
+    f'ID: {list(empleados.keys())[2]} | Nombre: {empleados[103]["nombre"]} | Nuevo salario: {empleados[103]["salario"]}'
+)
 
-# --- PASO 4: CALCULAR PROMEDIO POR DEPARTAMENTO ---
+# ---------------------------------------------------------
+# MISIÓN 3: CONTRATACIÓN (AÑADIR)
+# Añade un nuevo empleado con ID 106:
+# Nombre: "Jorge", Edad: 22, Dept: "Ventas", Salario: 2500
+# ---------------------------------------------------------
+print("\n--- 3. CONTRATACIÓN DE JORGE ---")
+empleados[106] = {
+    "nombre": "Jorge",
+    "edad": 22,
+    "departamento": "Ventas",
+    "salario": 2500,
+}
+for clave, valor in empleados.items():
+    print(f'ID: {clave} | Nombre: {valor["nombre"]} | Dept: {valor["departamento"]}')
+# ---------------------------------------------------------
+# MISIÓN 4: ANÁLISIS DE DATOS (AGRUPACIÓN) ⚠️ EL RETO DE HOY
+# Calcula el SALARIO PROMEDIO por departamento.
+# Pista: Primero necesitas agrupar los sueldos en listas:
+# { 'Ventas': [3000, 3800, 2500], 'IT': ... }
+# ---------------------------------------------------------
+print("\n--- 4. SALARIOS POR DEPARTAMENTO ---")
 
-# 1. Crear un diccionario auxiliar (la mesa con los sobres vacíos)
-# La clave será el departamento y el valor será una LISTA de sueldos.
 sueldos_por_depto = {}
 
-print("\n--- PROCESANDO SALARIOS ---")
+# ... TÚ CÓDIGO AQUÍ ...
+for e in empleados:
+    dept = empleados[e]["departamento"]
+    sueldo = empleados[e]["salario"]
 
-for id_emp, datos in empleados.items():
-    depto_actual = datos["dept"]
-    sueldo_actual = datos["salario"]
+    if dept not in sueldos_por_depto:
+        sueldos_por_depto[dept] = []
 
-    # LA MAGIA: Preguntamos si el sobre ya existe
-    if depto_actual not in sueldos_por_depto:
-        # Si es la primera vez que vemos este depto, creamos la lista vacía
-        sueldos_por_depto[depto_actual] = []
+    sueldos_por_depto[dept].append(sueldo)
 
-    # Ahora que seguro que existe la lista, añadimos el sueldo
-    sueldos_por_depto[depto_actual].append(sueldo_actual)
-
-# 2. Ahora que ya tenemos los sueldos agrupados, calculamos promedios
-print("\n--- RESULTADOS ---")
+print("\n--- PROMEDIO SALARIAL POR DEPARTAMENTO ---")
 for depto, lista_sueldos in sueldos_por_depto.items():
+    # 1. Calcular promedio (Suma / Cantidad)
     promedio = sum(lista_sueldos) / len(lista_sueldos)
-    print(f"Departamento: {depto} | Promedio: {promedio}€")
+
+    # 2. Imprimir bonito
+    print(f"Departamento: {depto} | Sueldo Medio: {promedio}€")
+print("\n")
+print("-" * 50)
