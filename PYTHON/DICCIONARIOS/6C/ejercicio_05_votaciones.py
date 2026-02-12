@@ -47,7 +47,12 @@ ganador = ""
 max_votos = 0
 
 # ... TU LÓGICA AQUÍ ...
-max_votos = max(resultados.values())
+# max_votos = max(resultados.values())
+
+for nombre, votos in resultados.items():
+    if votos > max_votos:
+        max_votos = votos
+        ganador = nombre
 
 print(f"El ganador es {ganador} con {max_votos} votos.")
 
@@ -64,10 +69,20 @@ total_votos = 0
 
 # Paso A: Calcular el total de votos (suma de todos los valores)
 # ... TU LÓGICA AQUÍ ...
-
+total_votos = sum(resultados.values())
 
 print(f"Total de votos emitidos: {total_votos}")
 print("-" * 30)
 
 # Paso B: Calcular y mostrar porcentajes
 # ... TU LÓGICA AQUÍ ...
+porcentajes = {}
+
+for candidato, votos in resultados.items():
+    formula = (votos / total_votos) * 100
+
+    if candidato not in porcentajes:
+        porcentajes[candidato] = formula
+
+for c, v in porcentajes.items():
+    print(f"Candidato: {c}: {v:.2f}%")
