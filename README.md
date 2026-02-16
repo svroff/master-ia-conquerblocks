@@ -1,55 +1,61 @@
-# 🚀 Master en Inteligencia Artificial y Ciberseguridad | ConquerBlocks
+# 🧠 Máster en Inteligencia Artificial - Conquer Blocks
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
-![NumPy](https://img.shields.io/badge/Numpy-Data%20Science-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Status](https://img.shields.io/badge/Estado-En%20Progreso-orange?style=for-the-badge)
+![Python Version](https://img.shields.io/badge/Python-3.11+-blue.svg)
+![Status](https://img.shields.io/badge/Status-En%20Progreso-green)
+![Focus](https://img.shields.io/badge/Focus-AI%20%26%20Data%20Science-orange)
 
-## 👋 Sobre el Proyecto
+Repositorio oficial de mis prácticas y proyectos durante el **Máster de Inteligencia Artificial** de Conquer Blocks. Aquí documento mi progreso desde los fundamentos de programación hasta la implementación de algoritmos avanzados de IA.
 
-¡Bienvenido a mi laboratorio digital! 🧪
+---
 
-Este repositorio documenta mi viaje de aprendizaje a través del **Master de Desarrollo de IA y Ciberseguridad** de **ConquerBlocks**. Aquí no solo guardo código; guardo mi evolución de aprendiz a experto.
+## 📂 Estructura del Proyecto
 
-El objetivo es dominar las bases de la programación, la manipulación de datos, el entrenamiento de modelos de IA y, por supuesto, asegurar que todo ello sea robusto frente a ciberataques.
+El repositorio está organizado en módulos de aprendizaje progresivo:
 
-> _"Talk is cheap. Show me the code."_ - Linus Torvalds
+### 🐍 PYTHON
 
-## 📚 Stack Tecnológico & Herramientas
+El lenguaje principal del máster.
 
-Mi cinturón de herramientas actual incluye:
+#### 🟦 [01_BASICO](./PYTHON/01_BASICO/)
 
-- **Lenguajes:** Python 🐍
-- **Data Science:** NumPy (Matrices y Álgebra Lineal), Pandas (próximamente).
-- **Entorno:** VS Code + Extensions (Black Formatter, Python).
-- **Control de Versiones:** Git & GitHub.
-- **IA & ML:** (Próximamente: PyTorch, TensorFlow, LLMs).
-- **Ciberseguridad:** (Próximamente: Pentesting scripts, Hardening).
+_Fundamentos sólidos de programación y estructuras de datos._
 
-## 🗺️ Hoja de Ruta (Roadmap)
+- **Listas y Estructuras Iterativas:** Bucles `for`, `while` y manipulación de listas.
+- **Diccionarios:** Manejo de datos clave-valor y anidamiento complejo (JSON-like).
+- **Condicionales:** Lógica de control de flujo.
+- **Sets y Tuplas:** Estructuras inmutables y conjuntos únicos.
+- **Arrays y Librerías:** Introducción al ecosistema de módulos.
 
-Aquí marco mis hitos conquistados:
-cd
+#### 🟧 [02_AVANZADO](./PYTHON/02_AVANZADO/)
 
-- [x] **Configuración del Entorno:** VS Code, Git, Virtual Environments.
-- [x] **Python Core:** Sintaxis, Estructuras de datos, Funciones.
-- [ ] **NumPy & Análisis de Datos:** Arrays, Slicing, Boolean Masking. 🚧 _(Trabajando en ello)_
-- [ ] **Pandas & Visualización:** Manipulación de Datasets.
-- [ ] **Machine Learning:** Algoritmos supervisados y no supervisados.
-- [ ] **Deep Learning & NLP:** Redes Neuronales y LLMs.
-- [ ] **Ciberseguridad:** Hacking Ético y Defensa.
+_Ingeniería de software, manipulación de datos y algoritmos complejos._
 
-## 📂 Estructura del Repositorio
+- [cite_start]**01_Funciones:** Arquitectura de código, parámetros `*args`/`**kwargs`, `lambda` y alcance (scope)[cite: 104, 105, 106].
+- _(Próximamente)_ **Manejo de Archivos y Excepciones:** Persistencia de datos y control de errores.
+- [cite_start]_(Próximamente)_ **POO:** Programación Orientada a Objetos (Clases, Herencia, Polimorfismo)[cite: 83, 94].
+- _(Próximamente)_ **Numpy & Pandas:** Análisis y manipulación de datos masivos.
 
-El proyecto está organizado temáticamente para mantener el orden mientras avanzo en los módulos. Actualmente, el foco principal es **Python** y sus fundamentos para IA:
+---
 
-```text
-master-ia-conquerblocks/
-│
-├── 🐍 PYTHON/
-│   ├── 🧱 ARRAYS MODULOS LIBRERIAS/      # Manejo de datos y librerías externas
-│   ├── 🔧 CONDA/                         # Gestión de entornos virtuales y paquetes
-│   ├── 🔀 CONDICIONALES/                 # Lógica de control y toma de decisiones
-│   ├── 🔄 LISTAS Y ESTRUCTURAS ITERATIVAS/ # Bucles, listas y manipulación de colecciones
-│   ├── 👶 PRIMEROS EJERCICIOS/           # Mis primeros pasos "Hello World" y lógica básica
-│   └── 📦 SETS - TUPLAS/                 # Estructuras de datos inmutables y conjuntos únicos
-```
+## 🛠️ Tecnologías y Herramientas
+
+- **Lenguaje:** Python 3
+- **IDE:** VS Code (con extensiones de productividad)
+- **Control de Versiones:** Git & GitHub
+- **Librerías (Loading...):** `numpy`, `pandas`, `matplotlib`, `scikit-learn`.
+
+---
+
+## 📝 Notas de Aprendizaje
+
+> "La programación no trata de escribir código, sino de resolver problemas."
+
+Este repositorio sigue buenas prácticas de desarrollo:
+
+- ✅ **Clean Code:** Variables descriptivas y estructura legible.
+- ✅ **Git Flow:** Uso de ramas (`feature/...`) para ejercicios complejos.
+- ✅ **Documentación:** Comentarios explicativos y docstrings en funciones.
+
+---
+
+_Desarrollado por **Sergi** en el camino hacia la Ingeniería de IA._ 🚀
