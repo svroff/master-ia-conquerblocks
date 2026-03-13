@@ -16,13 +16,20 @@ print("\n--- EJERCICIO 3: CREADOR DE CONTRASEÑAS ---")
 import string
 import random
 
+
 # Tu código aquí:
-mi_palabra = ""
+def password_generator(length):
+    digits = string.ascii_letters + string.digits + string.punctuation
 
-letras = string.ascii_letters  # "abcdef...XYZ"
-numeros = string.digits  # "0123456789"
-simbolos = string.punctuation  # "!#$%&/()..."
+    passwd = ""
 
-for l in letras:
-    l = random.choice(letras)
-    print(l)
+    for _ in range(length):
+        caracter = random.choice(digits)
+        passwd += caracter
+
+    return passwd
+
+
+len_input = int(input("De cuántos caracteres quieres la password? "))
+password_generada = password_generator(len_input)
+print(f"Tu nueva clave es {password_generada}")
