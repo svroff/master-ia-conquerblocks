@@ -36,14 +36,10 @@ print("\n--- RETO 2 ---")
 
 # Tu código aquí:
 def generar_nickname(nombre, adjetivo):
-    digits = string.digits
-    nickname = (
-        nombre
-        + adjetivo
-        + random.choice(digits)
-        + random.choice(digits)
-        + random.choice(digits)
-    )
+    nickname = nombre + adjetivo
+    for _ in range(3):
+        nickname += random.choice(string.digits)
+
     return nickname
 
 
@@ -66,4 +62,10 @@ print("\n--- RETO 3 ---")
 
 # Tu código aquí:
 def lanzar_dados(cantidad_dados=3, caras=6):
-    
+    total = 0
+    for _ in range(cantidad_dados):
+        total += random.randint(1, caras)
+    return total
+
+
+print(lanzar_dados())

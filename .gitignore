@@ -1,7 +1,9 @@
 # .gitignore para Python
 __pycache__/
 *.py[cod]
+venv/
 .venv/
 env/
+.env/
 .vscode/
 .DS_Storels -
