@@ -1,10 +1,11 @@
-# Paso 1: una función normal (sin recursividad)
-# Paso 2: la misma cuenta atrás pero recursiva
-def cuenta_atras(n):
-    print(n)
-    if n == 1:  # caso base: para aquí
-        return
-    cuenta_atras(n - 1)  # la función se llama a sí misma
+def fibonacci(indice):
+    # print(f"Calculando fibonacci({indice})")
+    if indice <= 1:
+        print(f"Caso base: devuelvo {indice}")
+        return indice
+    resultado = fibonacci(indice - 1) + fibonacci(indice - 2)
+    print(f"fibonacci({indice}) = {resultado}")
+    return resultado
 
 
-cuenta_atras(5)
+fibonacci(8)
