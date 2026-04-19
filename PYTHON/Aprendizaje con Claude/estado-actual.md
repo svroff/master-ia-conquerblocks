@@ -1,16 +1,17 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-_[por rellenar]_
+Tema 1 de Python Avanzado — Funciones Lambda y Decoradores.
 
 ## Qué acabo de aprender
-_[por rellenar]_
+- Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
 
 ## Qué me quedó a medias
-_[por rellenar]_
+- Recursividad: entiende el concepto pero necesita más práctica.
 
 ## Duda abierta
 _[por rellenar]_
 
 ## Siguiente paso
-_[por rellenar]_
+Primera clase de Decoradores (mañana 2026-04-20):
+https://academia.conquerblocks.com/courses/master-en-inteligencia-artificial/classes/144/
