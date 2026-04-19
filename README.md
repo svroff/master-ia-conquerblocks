@@ -1,61 +1,78 @@
-# 🧠 Máster en Inteligencia Artificial - Conquer Blocks
+# Máster en Inteligencia Artificial - Conquer Blocks
 
 ![Python Version](https://img.shields.io/badge/Python-3.11+-blue.svg)
 ![Status](https://img.shields.io/badge/Status-En%20Progreso-green)
 ![Focus](https://img.shields.io/badge/Focus-AI%20%26%20Data%20Science-orange)
 
-Repositorio oficial de mis prácticas y proyectos durante el **Máster de Inteligencia Artificial** de Conquer Blocks. Aquí documento mi progreso desde los fundamentos de programación hasta la implementación de algoritmos avanzados de IA.
+Repositorio de prácticas y proyectos del **Máster de Inteligencia Artificial** de Conquer Blocks. Documenta el progreso desde fundamentos de programación hasta implementación de modelos de IA.
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
-El repositorio está organizado en módulos de aprendizaje progresivo:
-
-### 🐍 PYTHON
-
-El lenguaje principal del máster.
-
-#### 🟦 [01_BASICO](./PYTHON/01_BASICO/)
-
-_Fundamentos sólidos de programación y estructuras de datos._
-
-- **Listas y Estructuras Iterativas:** Bucles `for`, `while` y manipulación de listas.
-- **Diccionarios:** Manejo de datos clave-valor y anidamiento complejo (JSON-like).
-- **Condicionales:** Lógica de control de flujo.
-- **Sets y Tuplas:** Estructuras inmutables y conjuntos únicos.
-- **Arrays y Librerías:** Introducción al ecosistema de módulos.
-
-#### 🟧 [02_AVANZADO](./PYTHON/02_AVANZADO/)
-
-_Ingeniería de software, manipulación de datos y algoritmos complejos._
-
-- [cite_start]**01_Funciones:** Arquitectura de código, parámetros `*args`/`**kwargs`, `lambda` y alcance (scope)[cite: 104, 105, 106].
-- _(Próximamente)_ **Manejo de Archivos y Excepciones:** Persistencia de datos y control de errores.
-- [cite_start]_(Próximamente)_ **POO:** Programación Orientada a Objetos (Clases, Herencia, Polimorfismo)[cite: 83, 94].
-- _(Próximamente)_ **Numpy & Pandas:** Análisis y manipulación de datos masivos.
+```
+master-ia-conquerblocks/
+├── PYTHON/
+│   ├── 01_BASICO/
+│   ├── 02_AVANZADO/
+│   └── Aprendizaje con Claude/
+└── README.md
+```
 
 ---
 
-## 🛠️ Tecnologías y Herramientas
+## PYTHON
 
-- **Lenguaje:** Python 3
-- **IDE:** VS Code (con extensiones de productividad)
-- **Control de Versiones:** Git & GitHub
-- **Librerías (Loading...):** `numpy`, `pandas`, `matplotlib`, `scikit-learn`.
+### [01_BASICO](./PYTHON/01_BASICO/) ✅
 
----
+Fundamentos de programación y estructuras de datos.
 
-## 📝 Notas de Aprendizaje
-
-> "La programación no trata de escribir código, sino de resolver problemas."
-
-Este repositorio sigue buenas prácticas de desarrollo:
-
-- ✅ **Clean Code:** Variables descriptivas y estructura legible.
-- ✅ **Git Flow:** Uso de ramas (`feature/...`) para ejercicios complejos.
-- ✅ **Documentación:** Comentarios explicativos y docstrings en funciones.
+| Módulo | Contenido |
+|--------|-----------|
+| Primeros Ejercicios | Variables, tipos de datos, operadores |
+| Condicionales | `if/elif/else`, lógica de decisión |
+| Listas y Bucles | `for`, `while`, manipulación de listas (3 bloques progresivos) |
+| Sets y Tuplas | Estructuras inmutables, operaciones de conjuntos |
+| Diccionarios | Clave-valor, anidamiento, agrupaciones (3 bloques progresivos) |
+| Arrays y Librerías | Introducción a NumPy, operaciones vectorizadas (3 bloques progresivos) |
 
 ---
 
-_Desarrollado por **Sergi** en el camino hacia la Ingeniería de IA._ 🚀
+### [02_AVANZADO](./PYTHON/02_AVANZADO/) — en curso
+
+Ingeniería de software y algoritmos.
+
+| Módulo | Estado | Contenido |
+|--------|--------|-----------|
+| Funciones | ✅ | `def`, `*args`, `**kwargs`, scope, retorno múltiple |
+| Lambdas | ✅ | Funciones anónimas, `map()`, `filter()`, `sorted(key=...)` |
+| Recursividad | ✅ | Casos base/recursivos, pila de llamadas |
+| Manejo de Archivos y Excepciones | Próximo | `try/except`, lectura/escritura de ficheros |
+| POO | Próximo | Clases, herencia, polimorfismo, dunder methods |
+| NumPy & Pandas | Próximo | Análisis y manipulación de datos masivos |
+
+---
+
+### [Aprendizaje con Claude](./PYTHON/Aprendizaje%20con%20Claude/)
+
+Sistema de seguimiento personalizado del progreso, con perfil del aprendiz y estado actualizado de cada sesión de estudio.
+
+---
+
+## Tecnologías
+
+- **Lenguaje:** Python 3.11+
+- **IDE:** VS Code
+- **Control de versiones:** Git & GitHub
+- **Librerías actuales:** NumPy
+- **Librerías próximas:** Pandas, Matplotlib, Scikit-learn, TensorFlow, Keras, PyTorch
+
+---
+
+## Proyecto Capstone
+
+RAG local con LLM + Elasticsearch — stack: Python, LlamaIndex o LangChain, Ollama, FastAPI.
+
+---
+
+_Desarrollado por **Sergi Vicente** en el camino hacia la Ingeniería de IA._
