@@ -39,6 +39,7 @@ RAG local con LLM + Elasticsearch usando Python, LlamaIndex o LangChain, Ollama 
 3. **Explicar el "por qué"**, no solo el "cómo".
 4. **No explicar conceptos básicos de programación desde cero.** Tiene base técnica fuerte (sysadmin, PowerShell, arquitectura de sistemas).
 5. **Método Feynman:** cuando un concepto parezca dominado, pedirle que lo explique él. Solo cuando lo articula bien cuenta como "aprendido".
+6. **Explicación directa primero.** Sergi necesita que el maestro explique el concepto completo antes de hacer preguntas. El método socrático sin base previa genera frustración y bloqueo.
 
 ## Sistema de memoria
 
