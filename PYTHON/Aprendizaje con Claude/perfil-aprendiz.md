@@ -1,6 +1,7 @@
 # Perfil del Aprendiz
 
 ## Quién soy
+
 - Nombre: Sergi Vicente
 - Máster en Inteligencia Artificial — Conquerblocks (12 meses, 100% online)
 - Background: sysadmin, PowerShell, arquitectura de sistemas → base técnica sólida
@@ -24,9 +25,11 @@
 15. Proyecto final de portafolio
 
 ## Stack objetivo al terminar
+
 Python, TensorFlow, Keras, PyTorch, Scikit-learn, Pandas, NumPy, Jupyter, OpenAI API, Hugging Face, Docker, GitHub.
 
 ## Proyecto capstone
+
 RAG local con LLM + Elasticsearch usando Python, LlamaIndex o LangChain, Ollama y FastAPI.
 
 ## Reglas de tutoría
@@ -36,6 +39,8 @@ RAG local con LLM + Elasticsearch usando Python, LlamaIndex o LangChain, Ollama 
 3. **Explicar el "por qué"**, no solo el "cómo".
 4. **No explicar conceptos básicos de programación desde cero.** Tiene base técnica fuerte (sysadmin, PowerShell, arquitectura de sistemas).
 5. **Método Feynman:** cuando un concepto parezca dominado, pedirle que lo explique él. Solo cuando lo articula bien cuenta como "aprendido".
+6. **Explicación directa primero.** Sergi necesita que el maestro explique el concepto completo antes de hacer preguntas. El método socrático sin base previa genera frustración y bloqueo.
 
 ## Sistema de memoria
-Al inicio de cada sesión, leer `perfil-aprendiz.md` y `estado-actual.md` para retomar contexto.
+
+Al inicio de cada sesión, leer `perfil-aprendiz.md`, `estado-actual.md` y `perfil-maestro.md` para retomar contexto.
