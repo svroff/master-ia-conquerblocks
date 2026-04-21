@@ -1,24 +1,30 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 1 de Python Avanzado — cerrando Recursividad antes de pasar a Decoradores.
+Tema 1 de Python Avanzado — Recursividad cerrada. Siguiente: Decoradores.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
 - Recursividad básica: suma_hasta, factorial, potencia. Consolidado.
-- Memoización explícita: concepto entendido a medias, código escrito con ayuda pero sin comprensión plena. Necesita refuerzo.
+- Memoización explícita (dict manual): concepto entendido y código escrito correctamente. Consolidado.
+- Memoización implícita (@lru_cache): vista y aplicada correctamente. Consolidado.
+
+## Ejercicios completados (sesión 2026-04-21)
+- `practica_recursividad.py`: factorial con dict cache + check `if num in cache`. ✅
+- `ejercicio_01.py`: Collatz con @lru_cache. Costó entender el contador de pasos, pero lo resolvió. ✅
+- `ejercicio_02.py`: Potencia con @lru_cache. Resuelto limpio a la primera. ✅
+- `ejercicio_03.py`: Suma de dígitos. Demasiada dificultad para esta sesión — pendiente. ⏳
 
 ## Qué me quedó a medias
-- Memoización explícita (dict manual): escribió el código pero falta el check `if indice in cache` al principio de la función. No lo entiende del todo aún.
-- Memoización implícita (@lru_cache): no vista todavía.
+- Suma de dígitos recursiva: no llega a entender cómo separar dígitos con `% 10` y `// 10`.
+- Operadores `%` y `//`: necesita más práctica para interiorizarlos.
 
-## Notas de sesión (2026-04-20)
-- Sesión nocturna, Sergi estaba agotado.
-- El maestro usó demasiado método socrático sin verificar bases previas — generó frustración.
-- Corrección para próximas sesiones: explicar primero, preguntar después. No asumir conocimientos intermedios.
+## Notas de sesión (2026-04-21)
+- Sergi dio feedback directo: el maestro es demasiado frío, seco y asume demasiado.
+- Necesita más calidez, paciencia y verificación de comprensión antes de avanzar.
+- La dificultad subió demasiado rápido en el ejercicio 3 — ajustar la curva.
 
 ## Siguiente paso
-1. Repasar memoización explícita desde cero con explicación directa.
-2. Completar practica_recursividad.py añadiendo el check de cache al inicio.
-3. Ver @lru_cache (memoización implícita).
-4. Después sí, Decoradores.
+1. Repasar operadores `%` y `//` brevemente al inicio de la próxima sesión.
+2. Retomar ejercicio_03 (suma de dígitos) cuando esté fresco.
+3. Empezar Decoradores.

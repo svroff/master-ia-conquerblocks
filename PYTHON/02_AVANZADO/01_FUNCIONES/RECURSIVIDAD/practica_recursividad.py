@@ -1,13 +1,12 @@
-cache = {}
+from functools import lru_cache
 
+@lru_cache(maxsize=None)
 def factorial(num):
-    if num in cache:
-        return cache[num]
-    elif num == 1:
+
+    if num == 1:
         valor = num
     else:
         valor = num * factorial(num - 1)
-    cache[num] = valor
     return valor
 
-print(factorial(5))
+print(factorial(10))
