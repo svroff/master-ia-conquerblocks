@@ -15,7 +15,7 @@ master-ia-conquerblocks/
 ├── PYTHON/
 │   ├── 01_BASICO/
 │   ├── 02_AVANZADO/
-│   └── Aprendizaje con Claude/
+│   └── aprendizaje con Codex/
 └── README.md
 ```
 
@@ -53,7 +53,7 @@ Ingeniería de software y algoritmos.
 
 ---
 
-### [Aprendizaje con Claude](./PYTHON/Aprendizaje%20con%20Claude/)
+### [aprendizaje con Codex](./PYTHON/aprendizaje%20con%20Codex/)
 
 Sistema de seguimiento personalizado del progreso, con perfil del aprendiz y estado actualizado de cada sesión de estudio.
 
