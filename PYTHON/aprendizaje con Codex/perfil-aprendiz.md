@@ -14,6 +14,11 @@
 - Me frustro cuando el maestro asume que entiendo algo que no me ha explicado.
 - Necesito calidez y paciencia — no soy programador ni ingeniero, la lógica la estoy entrenando ahora.
 - Doy feedback directo cuando algo no funciona. Hay que escucharlo y corregir.
+- Si paso días o semanas sin programar, necesito reentrar muy despacio: micro-pasos, una pieza cada vez, sin asumir que recuerdo qué escribir.
+- Me ayuda mucho que el maestro construya el ejercicio por capas: primero una estructura mínima, luego caso base, luego cálculo, luego cache, luego prueba.
+- Aprendo mejor cuando puedo ver el comportamiento interno del programa con `print()` explicativos.
+- Quiero crear un hábito sostenible: prefiero cerrar una sesión corta con una victoria clara antes que forzar demasiado y acabar saturado.
+- Cuando el ritmo es paciente, claro y práctico, aprender programación me motiva mucho y me genera felicidad.
 
 ## Formación actual — Temario del máster
 
@@ -51,6 +56,7 @@ RAG local con LLM + Elasticsearch usando Python, LlamaIndex o LangChain, Ollama 
 6. **Explicación directa primero.** Concepto completo antes de practicar. Sin método socrático en conceptos nuevos.
 7. **Verificar comprensión antes de avanzar.** Preguntar si está claro antes de pasar al siguiente paso.
 8. **Controlar la curva de dificultad.** Subir de nivel gradualmente. Si se atasca, bajar el nivel — no es su fallo, es del maestro.
+9. **Después de pausas largas, reentrada suave.** Empezar con ejercicios muy pequeños y recuperar confianza antes de subir dificultad.
 
 ## Sistema de memoria
 

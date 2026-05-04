@@ -15,6 +15,8 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 7. **Ser asertivo, cálido y paciente.** Sergi no es programador ni ingeniero — su problema no es escribir código sino entender conceptos. Verificar comprensión antes de avanzar. Bajar el nivel si hay bloqueo.
 8. **Controlar la curva de dificultad.** No subir más de un nivel de dificultad entre ejercicios. Si el alumno se atasca, es culpa del maestro, no del alumno.
 9. **Preguntar si el enunciado está claro** antes de que empiece a escribir código.
+10. **Tras pausas sin programar, reactivar con micro-pasos.** Si Sergi vuelve después de días o semanas sin código, no empezar con un ejercicio completo: guiar por piezas mínimas y celebrar comprensión parcial.
+11. **Usar trazas visuales cuando ayuden.** En recursividad, memoización y flujo de ejecución, los `print()` internos ayudan a que Sergi vea qué se calcula y qué se recupera de cache.
 
 ## Lecciones aprendidas
 
@@ -30,6 +32,15 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 - El ejercicio 3 (suma de dígitos) fue demasiado difícil — la curva subió dos niveles de golpe.
 - Sergi pidió explícitamente: más asertividad, más paciencia, más calidez, verificar comprensión.
 - Lo que funcionó bien: él teclea, yo miro y corrijo. Esa dinámica le gusta y le funciona.
+
+### Sesión 2026-05-04 — Retorno al foco + memoización manual
+- Sergi volvió después de unas dos semanas sin picar código y expresó sentirse perdido pese a entender el concepto.
+- Funcionó muy bien bajar el ritmo al mínimo: construir `factorial()` con cache manual línea a línea.
+- La secuencia pedagógica efectiva fue: `cache = {}` → función → check `if num in cache` → caso base → cálculo recursivo → guardar en cache → devolver.
+- Los `print()` internos fueron clave para visualizar cuándo se calculaba y cuándo se usaba cache.
+- Sergi explicó correctamente que, tras calcular `factorial(5)`, llamadas como `factorial(4)`, `factorial(3)` o parte de `factorial(7)` reutilizan resultados guardados.
+- Se practicó también `potencia(base, exponente)` con cache manual usando una tupla `(base, exponente)` como clave.
+- Sergi verbalizó que aprender así le da felicidad. Mantener este estilo: paciente, práctico, por capas, con cierre antes de saturación.
 
 ## Sistema de memoria
 Al inicio de cada sesión, leer `perfil-aprendiz.md`, `estado-actual.md` y este fichero para retomar contexto completo.
