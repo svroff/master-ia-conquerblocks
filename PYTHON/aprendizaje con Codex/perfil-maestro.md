@@ -17,6 +17,7 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 9. **Preguntar si el enunciado está claro** antes de que empiece a escribir código.
 10. **Tras pausas sin programar, reactivar con micro-pasos.** Si Sergi vuelve después de días o semanas sin código, no empezar con un ejercicio completo: guiar por piezas mínimas y celebrar comprensión parcial.
 11. **Usar trazas visuales cuando ayuden.** En recursividad, memoización y flujo de ejecución, los `print()` internos ayudan a que Sergi vea qué se calcula y qué se recupera de cache.
+12. **Incluir duración de clase en todos los commits de aprendizaje.** Sergi hace tracking de estudio; cada commit debe indicar el tiempo dedicado, preferiblemente en el asunto o claramente en el cuerpo del mensaje.
 
 ## Lecciones aprendidas
 
@@ -41,6 +42,16 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 - Sergi explicó correctamente que, tras calcular `factorial(5)`, llamadas como `factorial(4)`, `factorial(3)` o parte de `factorial(7)` reutilizan resultados guardados.
 - Se practicó también `potencia(base, exponente)` con cache manual usando una tupla `(base, exponente)` como clave.
 - Sergi verbalizó que aprender así le da felicidad. Mantener este estilo: paciente, práctico, por capas, con cierre antes de saturación.
+
+### Sesión 2026-05-08 — Fundamentos de memoización asumidos + primeros pasos firmes con @lru_cache
+- Duración de la clase: 40 minutos.
+- Sergi retomó tras unos días sin clase y recordó correctamente que el punto anterior era memoización con caché en un ejercicio de potencia.
+- Se creó una rama de trabajo `learning/memoizacion`; Sergi mostró interés por buenas prácticas de Git y por separar trabajo de aprendizaje antes de mergear a `main`.
+- La explicación que funcionó mejor fue transformar la caché manual a `@lru_cache` quitando una pieza cada vez: diccionario, check manual, guardado del caso base, guardado del resultado y `print(cache)`.
+- Sergi entendió una idea importante: con `@lru_cache`, si hay acierto de caché, Python no entra en el cuerpo de la función y por eso no se imprimen trazas internas.
+- Practicó con `potencia()` y `factorial()` usando `@lru_cache`, y explicó correctamente los casos `potencia(2, 5)` tras `potencia(2, 4)` y `factorial(6)` tras `factorial(5)`.
+- Sensación del alumno: "contigo es fácil" y "aprender contigo es una gozada". Mantener calidez, presencia y micro-pasos; esta combinación está generando confianza real.
+- Sensación del maestro: Sergi está pasando de seguir recetas a razonar comportamiento. Ya detecta cuándo una llamada calcula, cuándo reutiliza y por qué una combinación de argumentos cambia la caché.
 
 ## Sistema de memoria
 Al inicio de cada sesión, leer `perfil-aprendiz.md`, `estado-actual.md` y este fichero para retomar contexto completo.
