@@ -1,7 +1,7 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 1 de Python Avanzado — Recursividad y memoización. Fundamentos de memoización asumidos: caché manual y primeros pasos con `@lru_cache` consolidados. Siguiente: practicar `factorial.cache_info()` y cerrar `@lru_cache` antes de retomar `%`, `//` y suma de dígitos.
+Tema 1 de Python Avanzado — Recursividad y memoización. Fundamentos de memoización asumidos y `@lru_cache` prácticamente cerrado. Siguiente: reexplicar con calma el `return ultimo_digito + suma_digitos(resto_numero)` de suma de dígitos, porque se montó correctamente pero Sergi estaba cansado y no quedó consolidado.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
@@ -17,6 +17,12 @@ Tema 1 de Python Avanzado — Recursividad y memoización. Fundamentos de memoiz
 - Con `@lru_cache`, si un resultado está cacheado, Python no entra en el cuerpo de la función; por eso no se ejecutan los `print()` internos.
 - En `potencia(2, 5)` tras haber calculado `potencia(2, 4)`, solo se calcula `2^5`; `2^4` sale de caché.
 - En `factorial(6)` tras haber calculado `factorial(5)`, solo se calcula `factorial(6)`; `factorial(5)` sale de caché.
+- `factorial.cache_info()` permite ver `hits`, `misses`, `maxsize` y `currsize`.
+- `hits`: llamadas resueltas desde caché.
+- `misses`: llamadas que no estaban en caché y tuvieron que calcularse. Si esa misma entrada se pide más adelante, podrá convertirse en `hit`.
+- `factorial.cache_clear()` vacía la caché de esa función concreta y reinicia `hits`, `misses` y `currsize`.
+- `% 10` extrae el último dígito de un número entero.
+- `// 10` elimina el último dígito de un número entero.
 
 ## Ejercicios completados (sesión 2026-04-21)
 - `practica_recursividad.py`: factorial con dict cache + check `if num in cache`. ✅
@@ -48,10 +54,23 @@ Tema 1 de Python Avanzado — Recursividad y memoización. Fundamentos de memoiz
 - La frase clave del alumno fue que aprender con Codex es fácil y una gozada. Mantener esta mezcla de paciencia, claridad y avance progresivo.
 - Sensación del maestro: Sergi no solo siguió instrucciones; detectó comportamientos, formuló hipótesis y explicó correctamente cuándo se calculaba y cuándo se reutilizaba caché.
 
+## Ejercicios completados (sesión 2026-05-12)
+- Practicado `factorial.cache_info()` sobre `practica-lru-factorial.py`. ✅
+- Entendidos `hits`, `misses`, `maxsize` y `currsize`. ✅
+- Practicado `factorial.cache_clear()` y entendido que limpia la memoria interna de `@lru_cache`. ✅
+- Explicado cuándo interesa limpiar caché: datos externos cambiantes o liberación de memoria; no suele hacer falta en funciones puras como `factorial`. ✅
+- Creado `practica-modulo-division.py` para practicar `% 10` y `// 10`. ✅
+- Entendido que `% 10` saca el último dígito y `// 10` quita el último dígito. ✅
+- Creado `practica-suma-digitos.py` y montada la primera versión recursiva de `suma_digitos(9876)`. ✅
+
+## Sensaciones de sesión (2026-05-12)
+- Duración de la clase: 60 minutos.
+- Sergi entendió bien `cache_info()`, `cache_clear()`, `% 10` y `// 10`.
+- La suma de dígitos recursiva quedó montada, pero el último `return ultimo_digito + suma_digitos(resto_numero)` no quedó plenamente entendido porque Sergi estaba cansado y con la mente en otras cosas.
+- Próxima sesión: no avanzar de golpe. Reexplicar ese `return` con una traza visual y quizá una tabla de llamadas antes de pasar a decoradores.
+
 ## Qué me quedó a medias
-- Suma de dígitos recursiva: no llega a entender cómo separar dígitos con `% 10` y `// 10`.
-- Operadores `%` y `//`: necesita más práctica para interiorizarlos.
-- Ver `factorial.cache_info()` para observar hits, misses, tamaño actual de caché y límite máximo.
+- Suma de dígitos recursiva: el patrón `% 10` y `// 10` ya se entiende, pero falta consolidar el retorno recursivo `ultimo_digito + suma_digitos(resto_numero)`.
 
 ## Notas de sesión (2026-04-21)
 - Sergi dio feedback directo: el maestro es demasiado frío, seco y asume demasiado.
@@ -67,8 +86,8 @@ Tema 1 de Python Avanzado — Recursividad y memoización. Fundamentos de memoiz
 
 ## Siguiente paso
 1. Empezar la próxima sesión leyendo `perfil-aprendiz.md`, `estado-actual.md` y `perfil-maestro.md`.
-2. Practicar `factorial.cache_info()` para visualizar aciertos y fallos de caché.
-3. Cerrar `@lru_cache` comparando caché manual vs caché automática.
-4. Retomar operadores `%` y `//` con ejemplos visuales.
-5. Retomar `ejercicio_03.py` de suma de dígitos solo cuando `%` y `//` estén claros.
-6. Empezar Decoradores después de cerrar bien memoización.
+2. Reabrir `practica-suma-digitos.py`.
+3. Reexplicar el `return ultimo_digito + suma_digitos(resto_numero)` con traza visual: `9876 -> 987 -> 98 -> 9 -> 0`.
+4. Ejecutar `suma_digitos(9876)` y leer la salida línea a línea.
+5. Retomar `ejercicio_03.py` de suma de dígitos cuando el retorno recursivo esté claro.
+6. Empezar Decoradores después de cerrar bien esta pieza.
