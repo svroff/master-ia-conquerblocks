@@ -91,8 +91,11 @@ When a learning session ends or meaningful progress is made:
 
 1. Update the memory files if the user asks, or if the session clearly changes the learning state.
 2. Record what was learned, what remains unclear, and the next tiny step.
-3. If committing learning progress, include session duration in the commit message.
-4. Keep branch conventions aligned with `learning/<tema>` when creating learning branches.
+3. Check `git status --short --branch`.
+4. If there are repository changes, autonomously run `git add -A`, `git commit`, and `git push` before ending the session.
+5. Use this exact commit-message shape: `duración de la sesión: resumen en pocas palabras del temario`.
+6. If the duration is not known, ask Sergi for it before committing; do not invent it.
+7. Keep branch conventions aligned with `learning/<tema>` when creating learning branches.
 
 Suggested memory update targets:
 
@@ -107,4 +110,7 @@ Before commits or branch operations:
 - Run `git status --short --branch`.
 - Confirm the active learning branch, usually `learning/<tema>`.
 - Keep local and remote tracking aligned.
-- Include class duration in learning commits, for example: `Sesión memoización: suma de dígitos consolidada (45 min)`.
+- Commit every completed session that changed the repo, then push the active branch.
+- Use exactly this message format: `duración de la sesión: resumen en pocas palabras del temario`.
+- Examples: `45 min: suma de dígitos y retorno recursivo`, `60 min: decoradores básicos y wrappers`.
+- If there are no changes, do not create an empty commit; report that the working tree is clean.
