@@ -12,10 +12,13 @@ Repositorio de prácticas y proyectos del **Máster de Inteligencia Artificial**
 
 ```
 master-ia-conquerblocks/
+├── .codex/
+│   └── skills/
 ├── PYTHON/
 │   ├── 01_BASICO/
 │   ├── 02_AVANZADO/
 │   └── aprendizaje con Codex/
+├── scripts/
 └── README.md
 ```
 
@@ -56,6 +59,21 @@ Ingeniería de software y algoritmos.
 ### [aprendizaje con Codex](./PYTHON/aprendizaje%20con%20Codex/)
 
 Sistema de seguimiento personalizado del progreso, con perfil del aprendiz y estado actualizado de cada sesión de estudio.
+
+---
+
+## Codex Tutor
+
+Este repo incluye la skill personalizada [`sergi-python-tutor`](./.codex/skills/sergi-python-tutor/SKILL.md) para mantener la misma dinámica de mentoría Python en Mac, Ubuntu y Fedora.
+
+Después de clonar o actualizar el repo en cualquier equipo:
+
+```bash
+git pull
+./scripts/install-codex-skills.sh
+```
+
+Reinicia Codex para que detecte la skill instalada en `~/.codex/skills`.
 
 ---
 
