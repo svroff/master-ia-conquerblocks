@@ -1,7 +1,7 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 1 de Python Avanzado — Recursividad y memoización. Fundamentos de memoización asumidos y `@lru_cache` prácticamente cerrado. Siguiente: reexplicar con calma el `return ultimo_digito + suma_digitos(resto_numero)` de suma de dígitos, porque se montó correctamente pero Sergi estaba cansado y no quedó consolidado.
+Tema 1 de Python Avanzado — Recursividad y memoización cerrado. Siguiente tema: Decoradores, empezando desde la idea de que `@lru_cache` es un decorador y dejando de verlo como magia.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
@@ -23,6 +23,8 @@ Tema 1 de Python Avanzado — Recursividad y memoización. Fundamentos de memoiz
 - `factorial.cache_clear()` vacía la caché de esa función concreta y reinicia `hits`, `misses` y `currsize`.
 - `% 10` extrae el último dígito de un número entero.
 - `// 10` elimina el último dígito de un número entero.
+- `return ultimo_digito + suma_digitos(resto_numero)` significa: "sumo mi último dígito con la suma recursiva de los dígitos restantes".
+- En suma de dígitos, la recursividad baja reduciendo el número (`9876 -> 987 -> 98 -> 9 -> 0`) y sube resolviendo las sumas pendientes.
 
 ## Ejercicios completados (sesión 2026-04-21)
 - `practica_recursividad.py`: factorial con dict cache + check `if num in cache`. ✅
@@ -69,8 +71,20 @@ Tema 1 de Python Avanzado — Recursividad y memoización. Fundamentos de memoiz
 - La suma de dígitos recursiva quedó montada, pero el último `return ultimo_digito + suma_digitos(resto_numero)` no quedó plenamente entendido porque Sergi estaba cansado y con la mente en otras cosas.
 - Próxima sesión: no avanzar de golpe. Reexplicar ese `return` con una traza visual y quizá una tabla de llamadas antes de pasar a decoradores.
 
+## Ejercicios completados (sesión 2026-05-14)
+- Reexplicado con calma el retorno recursivo `ultimo_digito + suma_digitos(resto_numero)`. ✅
+- Consolidada la diferencia entre la bajada de llamadas y la subida de resultados. ✅
+- Revisado y completado `ejercicio_03.py`: suma de dígitos recursiva con `@lru_cache`. ✅
+- Corregido el nombre del parámetro de `digito` a `numero` para que el código sea más claro. ✅
+- Tema de memoización dado por terminado. ✅
+
+## Sensaciones de sesión (2026-05-14)
+- La explicación visual de la bajada `9876 -> 987 -> 98 -> 9 -> 0` y la subida `9 + 0`, `8 + 9`, `7 + 17`, `6 + 24` funcionó bien.
+- Sergi detectó una duda real en el paso `suma_digitos(9)` y corrigió la confusión entre `ultimo_digito` y `resto_numero`.
+- La sesión cerró con claridad suficiente para pasar a Decoradores.
+
 ## Qué me quedó a medias
-- Suma de dígitos recursiva: el patrón `% 10` y `// 10` ya se entiende, pero falta consolidar el retorno recursivo `ultimo_digito + suma_digitos(resto_numero)`.
+- Nada pendiente de memoización. El siguiente bloque empieza en Decoradores.
 
 ## Notas de sesión (2026-04-21)
 - Sergi dio feedback directo: el maestro es demasiado frío, seco y asume demasiado.
@@ -86,8 +100,6 @@ Tema 1 de Python Avanzado — Recursividad y memoización. Fundamentos de memoiz
 
 ## Siguiente paso
 1. Empezar la próxima sesión leyendo `perfil-aprendiz.md`, `estado-actual.md` y `perfil-maestro.md`.
-2. Reabrir `practica-suma-digitos.py`.
-3. Reexplicar el `return ultimo_digito + suma_digitos(resto_numero)` con traza visual: `9876 -> 987 -> 98 -> 9 -> 0`.
-4. Ejecutar `suma_digitos(9876)` y leer la salida línea a línea.
-5. Retomar `ejercicio_03.py` de suma de dígitos cuando el retorno recursivo esté claro.
-6. Empezar Decoradores después de cerrar bien esta pieza.
+2. Crear o usar la rama `learning/decoradores`.
+3. Empezar Decoradores desde la pregunta: qué significa realmente escribir `@lru_cache` encima de una función.
+4. Construir un decorador mínimo por capas: función normal, función que recibe otra función, wrapper, retorno del wrapper y sintaxis `@decorador`.

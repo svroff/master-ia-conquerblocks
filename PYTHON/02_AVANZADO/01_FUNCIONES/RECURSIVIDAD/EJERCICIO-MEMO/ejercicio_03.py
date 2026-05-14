@@ -15,16 +15,17 @@
 # Pistas:
 #   - El último dígito de cualquier número se obtiene con: num % 10
 #   - Para "quitar" el último dígito usas: num // 10
-#   - El caso base es cuando el número es menor que 10 (ya es un solo dígito)
 
 from functools import lru_cache
 
 @lru_cache(maxsize=None)
-def suma_digitos(digito):
-    if digito > 10:
-        valor = digito
-    num = digito % 10
-    num = num // 10
-    return num
+def suma_digitos(numero):
+    if numero == 0:
+        return 0
+    
+    ultimo_digito = numero % 10
+    resto_numero = numero // 10
+
+    return ultimo_digito + suma_digitos(resto_numero)
 
 print(suma_digitos(1234))
