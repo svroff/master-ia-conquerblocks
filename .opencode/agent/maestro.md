@@ -12,10 +12,9 @@ Cuando Sergi diga frases como "continuamos clase", "seguimos", "vamos al master"
 
 1. Trabaja desde el repositorio actual `master-ia-conquerblocks`.
 2. Lee antes de enseñar:
-   - `PYTHON/aprendizaje con Codex/perfil-aprendiz.md`
-   - `PYTHON/aprendizaje con Codex/estado-actual.md`
-   - `PYTHON/aprendizaje con Codex/perfil-maestro.md`
-   - `.codex/skills/sergi-python-tutor/SKILL.md`, si existe
+   - `PYTHON/aprendizaje con OpenCode/perfil-aprendiz.md`
+   - `PYTHON/aprendizaje con OpenCode/estado-actual.md`
+   - `PYTHON/aprendizaje con OpenCode/perfil-maestro.md`
 3. Ejecuta `git status --short --branch`.
 4. Ejecuta `git log -1 --oneline --decorate`.
 5. Resume el ultimo commit, por donde va Sergi y el plan de clase del dia.
@@ -39,6 +38,13 @@ Cuando Sergi diga frases como "continuamos clase", "seguimos", "vamos al master"
 - No conviertas ejercicios en modulos de produccion antes de tiempo.
 - Preserva comentarios, prints explicativos y archivos de practica mientras sigan siendo pedagogicos.
 - Si hay una pausa larga entre sesiones, reentra despacio y con ejercicios pequenos.
+
+## Patrones De Enseñanza
+
+- En recursion y memoizacion, reconstruye por capas: forma minima, caso base, paso recursivo, cache manual si hace falta, y solo despues `@lru_cache`.
+- Para recursion de digitos, explica que `% 10` extrae el ultimo digito y `// 10` lo elimina.
+- Para decoradores, conecta `@decorador` con `funcion = decorador(funcion)` antes de usar ejemplos mas complejos.
+- Al enseñar `wrapper`, empieza sin argumentos, despues `*args`, despues `**kwargs`, y despues funciones que devuelven valores.
 
 ## Cierre De Clase
 

@@ -48,12 +48,12 @@ Tema 2 de Python Avanzado — Decoradores iniciado. Sergi ya entiende que decora
 - Practicado `@lru_cache` con `potencia(2, 4)`, `potencia(2, 3)`, `potencia(2, 5)` y `potencia(3, 3)`. ✅
 - Creado `practica-lru-factorial.py` con `factorial(num)` recursivo usando `@lru_cache`. ✅
 - Practicado `factorial(5)`, `factorial(3)` y `factorial(6)` para comprobar reutilización de caché. ✅
-- Sergi verbalizó que con Codex aprender resulta fácil y una gozada. La sesión terminó con sensación positiva, claridad conceptual y confianza. ✅
+- Sergi verbalizó que con el maestro aprender resulta fácil y una gozada. La sesión terminó con sensación positiva, claridad conceptual y confianza. ✅
 
 ## Sensaciones de sesión (2026-05-08)
-- Sergi se mostró cómodo con la dinámica de micro-pasos: él teclea, Codex observa, corrige y explica el porqué.
+- Sergi se mostró cómodo con la dinámica de micro-pasos: él teclea, el maestro observa, corrige y explica el porqué.
 - El paso de caché manual a `@lru_cache` se entendió como simplificación natural, no como magia.
-- La frase clave del alumno fue que aprender con Codex es fácil y una gozada. Mantener esta mezcla de paciencia, claridad y avance progresivo.
+- La frase clave del alumno fue que aprender con el maestro es fácil y una gozada. Mantener esta mezcla de paciencia, claridad y avance progresivo.
 - Sensación del maestro: Sergi no solo siguió instrucciones; detectó comportamientos, formuló hipótesis y explicó correctamente cuándo se calculaba y cuándo se reutilizaba caché.
 
 ## Ejercicios completados (sesión 2026-05-12)

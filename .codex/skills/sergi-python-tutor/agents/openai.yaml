@@ -1,4 +1,0 @@
-interface:
-  display_name: "Sergi Python Tutor"
-  short_description: "Tutoría Python personalizada para Sergi"
-  default_prompt: "Use $sergi-python-tutor para continuar mi sesión de aprendizaje Python desde la memoria del repositorio."

@@ -12,13 +12,13 @@ Repositorio de prácticas y proyectos del **Máster de Inteligencia Artificial**
 
 ```
 master-ia-conquerblocks/
-├── .codex/
-│   └── skills/
+├── .opencode/
+│   └── agent/
 ├── PYTHON/
 │   ├── 01_BASICO/
 │   ├── 02_AVANZADO/
-│   └── aprendizaje con Codex/
-├── scripts/
+│   └── aprendizaje con OpenCode/
+├── opencode.json
 └── README.md
 ```
 
@@ -56,24 +56,30 @@ Ingeniería de software y algoritmos.
 
 ---
 
-### [aprendizaje con Codex](./PYTHON/aprendizaje%20con%20Codex/)
+### [aprendizaje con OpenCode](./PYTHON/aprendizaje%20con%20OpenCode/)
 
 Sistema de seguimiento personalizado del progreso, con perfil del aprendiz y estado actualizado de cada sesión de estudio.
 
 ---
 
-## Codex Tutor
+## OpenCode Maestro
 
-Este repo incluye la skill personalizada [`sergi-python-tutor`](./.codex/skills/sergi-python-tutor/SKILL.md) para mantener la misma dinámica de mentoría Python en Mac, Ubuntu y Fedora.
+Este repo incluye el agente de OpenCode [`maestro`](./.opencode/agent/maestro.md) para mantener la misma dinámica de mentoría Python en Ubuntu Horus, Mac M3 Pro y workstation Ubuntu Orion.
 
-Después de clonar o actualizar el repo en cualquier equipo:
+En cualquier equipo:
 
 ```bash
 git pull
-./scripts/install-codex-skills.sh
+opencode
 ```
 
-Reinicia Codex para que detecte la skill instalada en `~/.codex/skills`.
+Después, dentro de OpenCode, basta con decir:
+
+```text
+Continuamos clase
+```
+
+El agente leerá la memoria de aprendizaje del repo, revisará Git y retomará la clase desde el último punto.
 
 ---
 
