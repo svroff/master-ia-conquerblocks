@@ -1,7 +1,7 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 1 de Python Avanzado — Recursividad y memoización cerrado. Siguiente tema: Decoradores, empezando desde la idea de que `@lru_cache` es un decorador y dejando de verlo como magia.
+Tema 2 de Python Avanzado — Decoradores iniciado. Sergi ya entiende que decorar una función significa sustituirla por un `wrapper` que añade comportamiento alrededor de la función original.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
@@ -83,8 +83,25 @@ Tema 1 de Python Avanzado — Recursividad y memoización cerrado. Siguiente tem
 - Sergi detectó una duda real en el paso `suma_digitos(9)` y corrigió la confusión entre `ultimo_digito` y `resto_numero`.
 - La sesión cerró con claridad suficiente para pasar a Decoradores.
 
+## Ejercicios completados (sesión 2026-05-15)
+- Duración de la clase: 45 minutos.
+- Iniciado el bloque de Decoradores desde la conexión con `@lru_cache`. ✅
+- Entendido que `@decorador` equivale a `funcion = decorador(funcion)`. ✅
+- Creado `01-decoradores.py` con un decorador básico que imprime antes y después de una función. ✅
+- Entendido que, tras decorar, el nombre de la función apunta primero al `wrapper`. ✅
+- Creado `02-decoradores.py` con `wrapper(*args, **kwargs)` y una función decorada con argumento por defecto. ✅
+- Entendido que `*args` recoge argumentos posicionales y los reenvía a la función original. ✅
+- Entendido que `**kwargs` recoge argumentos con nombre y que el patrón estándar es `wrapper(*args, **kwargs)`. ✅
+- Guardada la preferencia de llamar "maestro" al tutor durante las clases. ✅
+
+## Sensaciones de sesión (2026-05-15)
+- La explicación que mejor funcionó fue: decorar una función es sustituirla por un `wrapper` que añade comportamiento alrededor de la función original.
+- Sergi razonó correctamente que primero se ejecuta el `wrapper` porque el orden de los `print()` demuestra el flujo real.
+- La duda sobre por qué usar decoradores fue sana: el ejemplo de saludo es artificial, pero sirve para entender el mecanismo antes de casos reales como logs, medición de tiempo o `@lru_cache`.
+- La clase cerró con buena comprensión de decoradores básicos y sin saturación.
+
 ## Qué me quedó a medias
-- Nada pendiente de memoización. El siguiente bloque empieza en Decoradores.
+- Decoradores con funciones que devuelven valores: falta enseñar que el `wrapper` debe hacer `return funcion_original(*args, **kwargs)` cuando la función original devuelve algo.
 
 ## Notas de sesión (2026-04-21)
 - Sergi dio feedback directo: el maestro es demasiado frío, seco y asume demasiado.
@@ -101,5 +118,6 @@ Tema 1 de Python Avanzado — Recursividad y memoización cerrado. Siguiente tem
 ## Siguiente paso
 1. Empezar la próxima sesión leyendo `perfil-aprendiz.md`, `estado-actual.md` y `perfil-maestro.md`.
 2. Crear o usar la rama `learning/decoradores`.
-3. Empezar Decoradores desde la pregunta: qué significa realmente escribir `@lru_cache` encima de una función.
-4. Construir un decorador mínimo por capas: función normal, función que recibe otra función, wrapper, retorno del wrapper y sintaxis `@decorador`.
+3. Retomar Decoradores desde el patrón `wrapper(*args, **kwargs)`.
+4. Enseñar decoradores con funciones que devuelven valores usando `return funcion_original(*args, **kwargs)`.
+5. Después, conectar de nuevo con `@lru_cache` como decorador real que devuelve una versión cacheada de la función.

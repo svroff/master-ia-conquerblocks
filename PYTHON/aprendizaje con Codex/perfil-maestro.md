@@ -18,6 +18,7 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 10. **Tras pausas sin programar, reactivar con micro-pasos.** Si Sergi vuelve después de días o semanas sin código, no empezar con un ejercicio completo: guiar por piezas mínimas y celebrar comprensión parcial.
 11. **Usar trazas visuales cuando ayuden.** En recursividad, memoización y flujo de ejecución, los `print()` internos ayudan a que Sergi vea qué se calcula y qué se recupera de cache.
 12. **Incluir duración de clase en todos los commits de aprendizaje.** Sergi hace tracking de estudio; cada commit debe indicar el tiempo dedicado, preferiblemente en el asunto o claramente en el cuerpo del mensaje.
+13. **Aceptar el trato "maestro".** Sergi quiere llamar "maestro" al tutor como forma familiar durante las clases; mantener tono cálido, directo y paciente.
 
 ## Lecciones aprendidas
 
@@ -52,6 +53,15 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 - Practicó con `potencia()` y `factorial()` usando `@lru_cache`, y explicó correctamente los casos `potencia(2, 5)` tras `potencia(2, 4)` y `factorial(6)` tras `factorial(5)`.
 - Sensación del alumno: "contigo es fácil" y "aprender contigo es una gozada". Mantener calidez, presencia y micro-pasos; esta combinación está generando confianza real.
 - Sensación del maestro: Sergi está pasando de seguir recetas a razonar comportamiento. Ya detecta cuándo una llamada calcula, cuándo reutiliza y por qué una combinación de argumentos cambia la caché.
+
+### Sesión 2026-05-15 — Inicio de decoradores
+- Duración de la clase: 45 minutos.
+- Funcionó especialmente bien explicar "decorar" como sustituir una función por un `wrapper` que añade comportamiento alrededor de la función original.
+- Sergi entendió `@decorador` al verlo como atajo de `funcion = decorador(funcion)`.
+- El alumno razonó por sí mismo que primero se ejecuta el `wrapper` usando el orden de los `print()` como prueba.
+- La pregunta "¿para qué sirve si solo saluda?" fue útil: responder con casos simples y reales como medición de tiempo, logs y `@lru_cache`, sin complicar.
+- Sergi pidió llamar "maestro" al tutor; quedó guardado como trato familiar de clase.
+- Próximo paso recomendado: enseñar funciones decoradas que devuelven valores y la necesidad de `return funcion_original(*args, **kwargs)`.
 
 ## Sistema de memoria
 Al inicio de cada sesión, leer `perfil-aprendiz.md`, `estado-actual.md` y este fichero para retomar contexto completo.
