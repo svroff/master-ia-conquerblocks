@@ -94,14 +94,29 @@ Tema 2 de Python Avanzado — Decoradores iniciado. Sergi ya entiende que decora
 - Entendido que `**kwargs` recoge argumentos con nombre y que el patrón estándar es `wrapper(*args, **kwargs)`. ✅
 - Guardada la preferencia de llamar "maestro" al tutor durante las clases. ✅
 
+## Ejercicios completados (sesión 2026-05-22)
+- Retomado `03_decoradores.py` con decorador que envuelve una función `sumar(a, b)`. ✅
+- Consolidado que `resultado = funcion_original(*args, **kwargs)` recibe el valor devuelto por la función original dentro del `wrapper`. ✅
+- Probado el fallo pedagógico: si el `wrapper` no hace `return resultado`, desde fuera la llamada devuelve `None`. ✅
+- Restaurado `return resultado` y confirmado que el valor `5` sale del decorador y queda disponible fuera. ✅
+- Añadido `print("Resultado guardado: ", resultado)` para visualizar que el valor ya salió del `wrapper`. ✅
+- Conectado el mecanismo con `@lru_cache`: también es un decorador que envuelve la función, decide si llama a la original o devuelve un valor cacheado, y siempre debe devolver un resultado hacia fuera. ✅
+
 ## Sensaciones de sesión (2026-05-15)
 - La explicación que mejor funcionó fue: decorar una función es sustituirla por un `wrapper` que añade comportamiento alrededor de la función original.
 - Sergi razonó correctamente que primero se ejecuta el `wrapper` porque el orden de los `print()` demuestra el flujo real.
 - La duda sobre por qué usar decoradores fue sana: el ejemplo de saludo es artificial, pero sirve para entender el mecanismo antes de casos reales como logs, medición de tiempo o `@lru_cache`.
 - La clase cerró con buena comprensión de decoradores básicos y sin saturación.
 
+## Sensaciones de sesión (2026-05-22)
+- Sesión corta y directa, orientada a consolidar un punto ya practicado.
+- Sergi detectó correctamente que el ejercicio ya estaba hecho y verificó el comportamiento real quitando/restaurando el `return`.
+- El concepto clave quedó claro: el valor puede volver de la función original al `wrapper`, pero solo sale al exterior si el `wrapper` lo devuelve.
+- Quedó iniciada la conexión conceptual con `@lru_cache` como decorador real.
+
 ## Qué me quedó a medias
-- Decoradores con funciones que devuelven valores: falta enseñar que el `wrapper` debe hacer `return funcion_original(*args, **kwargs)` cuando la función original devuelve algo.
+- Decoradores con funciones que devuelven valores: concepto consolidado con `return resultado`. Falta practicar la forma corta `return funcion_original(*args, **kwargs)` solo cuando no hay trabajo posterior en el `wrapper`.
+- Conexión con `@lru_cache` iniciada: falta practicarla con un ejemplo concreto y traza de `hit`/`miss`.
 
 ## Notas de sesión (2026-04-21)
 - Sergi dio feedback directo: el maestro es demasiado frío, seco y asume demasiado.
@@ -118,6 +133,6 @@ Tema 2 de Python Avanzado — Decoradores iniciado. Sergi ya entiende que decora
 ## Siguiente paso
 1. Empezar la próxima sesión leyendo `perfil-aprendiz.md`, `estado-actual.md` y `perfil-maestro.md`.
 2. Crear o usar la rama `learning/decoradores`.
-3. Retomar Decoradores desde el patrón `wrapper(*args, **kwargs)`.
-4. Enseñar decoradores con funciones que devuelven valores usando `return funcion_original(*args, **kwargs)`.
-5. Después, conectar de nuevo con `@lru_cache` como decorador real que devuelve una versión cacheada de la función.
+3. Practicar la forma corta `return funcion_original(*args, **kwargs)` en un decorador donde no haga falta ejecutar nada después de la función original.
+4. Reforzar que un `return` corta la ejecución del `wrapper`; por eso no sirve si queremos imprimir o hacer lógica después.
+5. Conectar con `@lru_cache` mediante una traza concreta: primera llamada calcula y guarda; segunda llamada devuelve desde caché sin entrar en la función original.
