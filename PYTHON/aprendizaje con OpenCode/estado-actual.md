@@ -102,6 +102,13 @@ Tema 2 de Python Avanzado — Decoradores iniciado. Sergi ya entiende que decora
 - Añadido `print("Resultado guardado: ", resultado)` para visualizar que el valor ya salió del `wrapper`. ✅
 - Conectado el mecanismo con `@lru_cache`: también es un decorador que envuelve la función, decide si llama a la original o devuelve un valor cacheado, y siempre debe devolver un resultado hacia fuera. ✅
 
+## Ejercicios completados (sesión 2026-05-27)
+- Duración de la clase: 15 minutos.
+- Practicada la forma corta `return funcion_original(*args, **kwargs)` dentro del `wrapper`. ✅
+- Entendido que `return` corta la ejecución del `wrapper`, por lo que no sirve si necesitamos ejecutar lógica después de la función original. ✅
+- Creado `decorador_corto` en `03_decoradores.py`, con una función `multiplicar(a, b)` decorada. ✅
+- Confirmado que `resultado_corto = multiplicar(2, 3)` recibe correctamente el valor `6`. ✅
+
 ## Sensaciones de sesión (2026-05-15)
 - La explicación que mejor funcionó fue: decorar una función es sustituirla por un `wrapper` que añade comportamiento alrededor de la función original.
 - Sergi razonó correctamente que primero se ejecuta el `wrapper` porque el orden de los `print()` demuestra el flujo real.
@@ -114,8 +121,12 @@ Tema 2 de Python Avanzado — Decoradores iniciado. Sergi ya entiende que decora
 - El concepto clave quedó claro: el valor puede volver de la función original al `wrapper`, pero solo sale al exterior si el `wrapper` lo devuelve.
 - Quedó iniciada la conexión conceptual con `@lru_cache` como decorador real.
 
+## Sensaciones de sesión (2026-05-27)
+- Clase rápida y clara. Sergi identificó correctamente que la forma corta no sirve cuando hay un `print()` posterior, porque ese código no se ejecutaría después del `return`.
+- Buena comprensión de la diferencia entre guardar resultado para hacer trabajo posterior y devolver directamente la llamada original.
+
 ## Qué me quedó a medias
-- Decoradores con funciones que devuelven valores: concepto consolidado con `return resultado`. Falta practicar la forma corta `return funcion_original(*args, **kwargs)` solo cuando no hay trabajo posterior en el `wrapper`.
+- Decoradores con funciones que devuelven valores: concepto consolidado con `return resultado` y con la forma corta `return funcion_original(*args, **kwargs)` cuando no hay trabajo posterior en el `wrapper`.
 - Conexión con `@lru_cache` iniciada: falta practicarla con un ejemplo concreto y traza de `hit`/`miss`.
 
 ## Notas de sesión (2026-04-21)
@@ -133,6 +144,5 @@ Tema 2 de Python Avanzado — Decoradores iniciado. Sergi ya entiende que decora
 ## Siguiente paso
 1. Empezar la próxima sesión leyendo `perfil-aprendiz.md`, `estado-actual.md` y `perfil-maestro.md`.
 2. Crear o usar la rama `learning/decoradores`.
-3. Practicar la forma corta `return funcion_original(*args, **kwargs)` en un decorador donde no haga falta ejecutar nada después de la función original.
-4. Reforzar que un `return` corta la ejecución del `wrapper`; por eso no sirve si queremos imprimir o hacer lógica después.
-5. Conectar con `@lru_cache` mediante una traza concreta: primera llamada calcula y guarda; segunda llamada devuelve desde caché sin entrar en la función original.
+3. Conectar con `@lru_cache` mediante una traza concreta: primera llamada calcula y guarda; segunda llamada devuelve desde caché sin entrar en la función original.
+4. Reforzar que `@lru_cache` también debe devolver hacia fuera el resultado, venga de cálculo nuevo o de caché.
