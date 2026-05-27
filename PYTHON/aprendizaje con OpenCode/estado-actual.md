@@ -1,7 +1,7 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 2 de Python Avanzado — Decoradores iniciado. Sergi ya entiende que decorar una función significa sustituirla por un `wrapper` que añade comportamiento alrededor de la función original.
+Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones iniciado. Decoradores queda suficientemente cerrado para el nivel actual: Sergi entiende que decorar una función significa sustituirla por un `wrapper`, que `wrapper` recibe `*args` y `**kwargs`, llama a la función original y debe devolver hacia fuera el resultado si la función original devuelve algo.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
@@ -109,6 +109,14 @@ Tema 2 de Python Avanzado — Decoradores iniciado. Sergi ya entiende que decora
 - Creado `decorador_corto` en `03_decoradores.py`, con una función `multiplicar(a, b)` decorada. ✅
 - Confirmado que `resultado_corto = multiplicar(2, 3)` recibe correctamente el valor `6`. ✅
 
+## Ejercicios completados (sesión 2026-05-27 — continuación)
+- Duración de la clase: 15 minutos.
+- Cerrado el bloque de Decoradores para el nivel actual. ✅
+- Confirmado que no hace falta repetir caché manual ni `@lru_cache`, porque ya se trabajó durante recursividad y memoización. ✅
+- Creada la carpeta `PYTHON/02_AVANZADO/02_ARCHIVOS_EXCEPCIONES` con el PDF del temario `Python-avanzado-Teoria-2-Manipulacion-de-Archivos-Diapositivas_9a4fbe5a.pdf`. ✅
+- Revisado el PDF de teoría y detectado el temario: `open()`, rutas relativas/absolutas, lectura línea a línea, escritura, modos `r/w/a/x/b/t/r+/w+/a+`, NumPy y JSON. ✅
+- Decidido empezar el bloque por manejo de excepciones antes de archivos, porque los errores de archivos son casos reales y frecuentes. ✅
+
 ## Sensaciones de sesión (2026-05-15)
 - La explicación que mejor funcionó fue: decorar una función es sustituirla por un `wrapper` que añade comportamiento alrededor de la función original.
 - Sergi razonó correctamente que primero se ejecuta el `wrapper` porque el orden de los `print()` demuestra el flujo real.
@@ -124,10 +132,11 @@ Tema 2 de Python Avanzado — Decoradores iniciado. Sergi ya entiende que decora
 ## Sensaciones de sesión (2026-05-27)
 - Clase rápida y clara. Sergi identificó correctamente que la forma corta no sirve cuando hay un `print()` posterior, porque ese código no se ejecutaría después del `return`.
 - Buena comprensión de la diferencia entre guardar resultado para hacer trabajo posterior y devolver directamente la llamada original.
+- Sergi detectó con criterio que no hacía falta repetir la clase de caché manual, ya trabajada durante recursividad. Buen ajuste de rumbo.
 
 ## Qué me quedó a medias
-- Decoradores con funciones que devuelven valores: concepto consolidado con `return resultado` y con la forma corta `return funcion_original(*args, **kwargs)` cuando no hay trabajo posterior en el `wrapper`.
-- Conexión con `@lru_cache` iniciada: falta practicarla con un ejemplo concreto y traza de `hit`/`miss`.
+- Manejo de Archivos y Excepciones queda iniciado, sin práctica todavía.
+- Siguiente concepto concreto: qué pasa cuando Python intenta abrir un archivo que no existe y cómo controlarlo con `try/except`.
 
 ## Notas de sesión (2026-04-21)
 - Sergi dio feedback directo: el maestro es demasiado frío, seco y asume demasiado.
@@ -143,6 +152,6 @@ Tema 2 de Python Avanzado — Decoradores iniciado. Sergi ya entiende que decora
 
 ## Siguiente paso
 1. Empezar la próxima sesión leyendo `perfil-aprendiz.md`, `estado-actual.md` y `perfil-maestro.md`.
-2. Crear o usar la rama `learning/decoradores`.
-3. Conectar con `@lru_cache` mediante una traza concreta: primera llamada calcula y guarda; segunda llamada devuelve desde caché sin entrar en la función original.
-4. Reforzar que `@lru_cache` también debe devolver hacia fuera el resultado, venga de cálculo nuevo o de caché.
+2. Usar la rama actual `learning/decoradores` o crear una nueva rama de aprendizaje si se decide separar el bloque.
+3. Empezar suave con excepciones: intentar abrir un archivo inexistente, observar `FileNotFoundError`, y envolverlo con `try/except`.
+4. Después pasar a `open()` con `with`, rutas relativas y lectura de archivos.

@@ -63,5 +63,12 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 - Sergi pidió llamar "maestro" al tutor; quedó guardado como trato familiar de clase.
 - Próximo paso recomendado: enseñar funciones decoradas que devuelven valores y la necesidad de `return funcion_original(*args, **kwargs)`.
 
+### Sesión 2026-05-27 — Cierre de decoradores e inicio de archivos/excepciones
+- Duración de la clase: 15 minutos.
+- Decoradores queda cerrado para el nivel actual: Sergi entiende `@decorador`, `wrapper`, `*args`, `**kwargs`, `return resultado` y la forma corta `return funcion_original(*args, **kwargs)`.
+- Sergi corrigió bien el rumbo: no hace falta repetir caché manual ni `@lru_cache`, porque ya se trabajó durante recursividad y memoización.
+- Se añadió el PDF del nuevo bloque `02_ARCHIVOS_EXCEPCIONES` y se revisó su temario: `open()`, rutas, lectura, escritura, modos, NumPy y JSON.
+- Próximo paso recomendado: empezar por `try/except` aplicado a abrir un archivo inexistente, antes de avanzar con lectura/escritura.
+
 ## Sistema de memoria
 Al inicio de cada sesión, leer `perfil-aprendiz.md`, `estado-actual.md` y este fichero para retomar contexto completo.

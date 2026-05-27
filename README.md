@@ -50,7 +50,7 @@ Ingeniería de software y algoritmos.
 | Funciones | ✅ | `def`, `*args`, `**kwargs`, scope, retorno múltiple |
 | Lambdas | ✅ | Funciones anónimas, `map()`, `filter()`, `sorted(key=...)` |
 | Recursividad | ✅ | Casos base/recursivos, pila de llamadas |
-| Manejo de Archivos y Excepciones | Próximo | `try/except`, lectura/escritura de ficheros |
+| Manejo de Archivos y Excepciones | En curso | `try/except`, lectura/escritura de ficheros, JSON |
 | POO | Próximo | Clases, herencia, polimorfismo, dunder methods |
 | NumPy & Pandas | Próximo | Análisis y manipulación de datos masivos |
 
