@@ -1,7 +1,7 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones iniciado. Decoradores queda suficientemente cerrado para el nivel actual: Sergi entiende que decorar una función significa sustituirla por un `wrapper`, que `wrapper` recibe `*args` y `**kwargs`, llama a la función original y debe devolver hacia fuera el resultado si la función original devuelve algo.
+Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones en práctica. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
@@ -150,8 +150,24 @@ Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones iniciado. Decorad
 - Sergi explicó correctamente que la cache evita recalcular valores ya conocidos.
 - Decisión de hábito: cerrar antes de saturarse y mantener sesiones sostenibles.
 
+## Ejercicios completados (sesión 2026-05-29)
+- Rama `learning/excepciones` creada a partir de `main`. ✅
+- Empezado manejo de excepciones: `try/except FileNotFoundError`. ✅
+- Entendido que `except` con tipo específico solo captura ese error; `except:` sin tipo captura cualquiera. ✅
+- Explicada diferencia entre modo texto (`"r"`) y binario (`"rb"`). ✅
+- Practicado `.read()` en modo texto y binario: texto devuelve string, binario devuelve bytes (con `b'...'`). ✅
+- Aprendido que mezcla binario + encoding (`"rb"` + `encoding="utf-8"`) da error. ✅
+- Creado `fichero-test.txt` para prácticas. ✅
+- Cerrada la sesión a petición de Sergi tras pregunta sobre el temario del PDF. ✅
+
+## Sensaciones de sesión (2026-05-29)
+- Duración de la clase: ~45 minutos.
+- Sergi pidió seguir el PDF como guía, no desviarse con binarios. Aceptado — el modo binario no es prioritario en el temario.
+- Frustración temporal por planteamiento rápido del maestro sobre modo binario. Recuperado el rumbo con explicación clara.
+- Clase cerrada por agotamiento/fin de sesión.
+
 ## Siguiente paso
-1. Empezar la próxima sesión leyendo `perfil-aprendiz.md`, `estado-actual.md` y `perfil-maestro.md`.
-2. Usar la rama actual `learning/decoradores` o crear una nueva rama de aprendizaje si se decide separar el bloque.
-3. Empezar suave con excepciones: intentar abrir un archivo inexistente, observar `FileNotFoundError`, y envolverlo con `try/except`.
-4. Después pasar a `open()` con `with`, rutas relativas y lectura de archivos.
+1. Continuar por `open()` con `with` y lectura/escritura de archivos de texto según el PDF.
+2. following modes: `r`, `w`, `a`, `x`, `r+`, `w+`, `a+`.
+3. Después: rutas relativas/absolutas, lectura línea por línea.
+4. Finalmente: NumPy y JSON.
