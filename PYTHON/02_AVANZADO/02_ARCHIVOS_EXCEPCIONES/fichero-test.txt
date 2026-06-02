@@ -1,1 +1,2 @@
-Este es un fichero de test.
+Primera línea del archivo.
+Segunda línea del archivo.

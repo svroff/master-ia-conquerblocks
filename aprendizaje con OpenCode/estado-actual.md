@@ -1,7 +1,7 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones en práctica. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos.
+Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones en práctica. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos. `open()` con `with` practicado en modos `w`/`a`/`r`; lectura iterando con `for` + `.strip()` practicada. Discusión profunda sobre rutas (absolutas, relativas al cwd, absolutas por barra inicial). Setting de VSCode `python.terminal.executeInFileDir: true` configurado para que el cwd sea la carpeta del script.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
@@ -135,8 +135,10 @@ Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones en práctica. Ram
 - Sergi detectó con criterio que no hacía falta repetir la clase de caché manual, ya trabajada durante recursividad. Buen ajuste de rumbo.
 
 ## Qué me quedó a medias
-- Manejo de Archivos y Excepciones queda iniciado, sin práctica todavía.
-- Siguiente concepto concreto: qué pasa cuando Python intenta abrir un archivo que no existe y cómo controlarlo con `try/except`.
+- Modos `x`, `r+`, `w+`, `a+` aún no practicados.
+- Encoding utf-8 explícito en `open()` aún no practicado.
+- `try/except` aplicado a la apertura con `with` aún no practicado.
+- `try/except` aplicado a la lectura/escritura con `with` aún no practicado.
 
 ## Notas de sesión (2026-04-21)
 - Sergi dio feedback directo: el maestro es demasiado frío, seco y asume demasiado.
@@ -166,8 +168,29 @@ Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones en práctica. Ram
 - Frustración temporal por planteamiento rápido del maestro sobre modo binario. Recuperado el rumbo con explicación clara.
 - Clase cerrada por agotamiento/fin de sesión.
 
+## Ejercicios completados (sesión 2026-06-02)
+- Duración de la clase: 45 minutos.
+- Reconstruida en Horus la clase impartida ayer desde Atlas (no pusheada): `open()` con `write()` y lectura iterando con `for`. ✅
+- Practicado `with open(...) as f:` en sus tres modalidades: escritura (`"w"`), append (`"a"`) y lectura (`"r"`). ✅
+- Diferencia `w` vs `a` demostrada en vivo: `w` borra el contenido previo, `a` añade al final. ✅
+- Lectura iterando con `for linea in f:` y limpieza con `linea.strip()` para evitar el doble salto en pantalla. ✅
+- Sergi aplicó `.strip()` por iniciativa propia antes de que apareciera el problema — buen razonamiento. ✅
+- Reorganización de archivos: `PYTHON/aprendizaje con OpenCode/` movido a `aprendizaje con OpenCode/` en la raíz del repo. ✅
+- Limpiado `01-excepciones.py`: eliminado el bloque roto (`except:Ho` y copia.bin erróneo). ✅
+- Discusión profunda sobre rutas: absoluta, relativa al cwd, y absoluta por barra inicial. Sergi corrigió al maestro dos veces con criterio (rechazó `pathlib` por avanzado y eligió configurar VSCode; diagnosticó que `"/fichero-test.txt"` falla por ser absoluta desde `/`). ✅
+- Configurado setting de VSCode `python.terminal.executeInFileDir: true` para que el cwd sea la carpeta del script al ejecutar con ▶. ✅
+- `02-archivos.py` creado y funcionando con rutas relativas. ✅
+
+## Sensaciones de sesión (2026-06-02)
+- Sesión muy buena. Sergi cerró con sensación positiva.
+- Momento clave: Sergi dejó de seguir recetas y empezó a razonar sobre el comportamiento del entorno (cwd, `/` inicial, configuración de VSCode). Dos correcciones al maestro en una clase son señal de autonomía real.
+- La decisión de no usar `pathlib` fue del aprendiz y fue correcta: la curva de dificultad manda.
+- El error de la barra `/` inicial se convirtió en una lección memorable sobre cómo Linux interpreta rutas.
+- Cierre limpio, con victoria clara (archivo 02 funcionando) y concepto denso bien asentado (rutas y cwd).
+
 ## Siguiente paso
-1. Continuar por `open()` con `with` y lectura/escritura de archivos de texto según el PDF.
-2. following modes: `r`, `w`, `a`, `x`, `r+`, `w+`, `a+`.
-3. Después: rutas relativas/absolutas, lectura línea por línea.
-4. Finalmente: NumPy y JSON.
+1. Probar el modo `x` (creación exclusiva): útil para crear archivos nuevos sin pisar los existentes.
+2. Probar los modos compuestos `r+`, `w+`, `a+` (lectura + escritura combinados).
+3. Añadir `encoding="utf-8"` a las aperturas para evitar sorpresas con tildes y caracteres no ASCII.
+4. Llevar el `try/except` ya practicado a un `with open(...)` para mostrar el patrón limpio: `with` cierra el archivo aunque haya error, `except` lo captura fuera.
+5. Finalmente: NumPy y JSON.
