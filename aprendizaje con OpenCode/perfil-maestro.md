@@ -70,5 +70,14 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 - Se añadió el PDF del nuevo bloque `02_ARCHIVOS_EXCEPCIONES` y se revisó su temario: `open()`, rutas, lectura, escritura, modos, NumPy y JSON.
 - Próximo paso recomendado: empezar por `try/except` aplicado a abrir un archivo inexistente, antes de avanzar con lectura/escritura.
 
+### Sesión 2026-06-04 — Métodos de lectura y arranque de proyecto integrador
+- Duración de la clase: 45 minutos.
+- Lección principal de la sesión: **no soltar una tabla de referencia antes de mostrar un ejemplo mínimo ejecutable**. Sergi lo señaló de forma directa: "no me has enseñado nada, maestro". Aceptado en el momento y corregido (ejemplo mínimo → tabla → ejercicio).
+- Lección útil colateral: los corchetes en una firma (`str.count(sub[, start[, end]])`) significan argumento opcional. El alumno no los había visto antes; queda como regla explícita.
+- También fue útil: cuando el autocompletado de VSCode mete un import espurio (`from certifi import contents`), la respuesta correcta es "no importes nada que no sepas para qué sirve", no la corrección aislada.
+- Sergi formuló dos preguntas que muestran salto de nivel: "¿readline() hace un for interno?" y "¿por qué devuelve '' y no None?". Responderlas con la idea del cursor y la convención de "valor vacío del mismo tipo" funcionó bien.
+- Decisión importante: arrancar ya un **proyecto integrador** (`TextAnalyzer`) porque Sergi pidió expresamente subir a GitHub proyectos sólidos. La unidad de archivos es buen momento para producir artefactos con README, estructura de carpetas y código modular.
+- Próximo paso recomendado: cerrar el bucle `while` con `readline()` y numerar líneas, después `readlines()` vs `for` vs `readline()`, y empezar `TextAnalyzer` v0.1.
+
 ## Sistema de memoria
 Al inicio de cada sesión, leer `perfil-aprendiz.md`, `estado-actual.md` y este fichero para retomar contexto completo.

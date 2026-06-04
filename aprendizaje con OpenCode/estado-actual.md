@@ -1,7 +1,7 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones en práctica. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos. `open()` con `with` practicado en modos `w`/`a`/`r`; lectura iterando con `for` + `.strip()` practicada. Discusión profunda sobre rutas (absolutas, relativas al cwd, absolutas por barra inicial). Setting de VSCode `python.terminal.executeInFileDir: true` configurado para que el cwd sea la carpeta del script.
+Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos. `open()` con `with` practicado en modos `w`/`a`/`r`; lectura iterando con `for` + `.strip()` practicada. `f.read()` practicado y diferenciado de la lectura con `for`; conteo de caracteres con `len()` y de líneas con `str.count("\n")` practicado. `f.readline()` introducido (cursor interno + convención de string vacío al agotarse). Próximo micro-paso: bucle `while` con `readline()` y líneas numeradas. Paralelamente: proyecto integrador `TextAnalyzer` iniciado como práctica sólida de portfolio.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
@@ -188,9 +188,36 @@ Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones en práctica. Ram
 - El error de la barra `/` inicial se convirtió en una lección memorable sobre cómo Linux interpreta rutas.
 - Cierre limpio, con victoria clara (archivo 02 funcionando) y concepto denso bien asentado (rutas y cwd).
 
+## Ejercicios completados (sesión 2026-06-04)
+- Duración de la clase: 45 minutos.
+- Empezado el bloque "métodos de lectura" del temario de archivos. ✅
+- Explicación corregida tras precipitarme con tabla de referencia antes de mostrar un ejemplo real: Sergi señaló "no me has enseñado nada, maestro". Lección clara: concepto + ejemplo mínimo ejecutable, después la tabla de comparación. ✅
+- Creado `03-read.py` con `with open(..., "r") as f: contenido = f.read()` y confirmación de `type(contenido) == str`. ✅
+- Detectado y corregido import erróneo `from certifi import contents` (VSCode autocompletó mal): regla reforzada de no importar nada que no se sepa para qué sirve. ✅
+- Practicado `len(contenido)` y `contenido.count("\n")` para contar caracteres y líneas. Sergi se atascó brevemente con la signatura de `count(sub[, start[, end]])` por no reconocer los corchetes como "argumento opcional": regla reforzada, los corchetes en una firma se pueden ignorar. ✅
+- Explicado el cursor interno del archivo: `readline()` lee hasta el próximo `\n` y mueve el puntero. Aclarado que no es un `for` por dentro, es una operación directa. ✅
+- Explicada la convención de Python "valor vacío del mismo tipo" al agotarse: `readline()` agotado devuelve `""`, no `None`. ✅
+- Visto en vivo que una tercera llamada a `readline()` devuelve `""` cuando no quedan más líneas. ✅
+- Ejercicio de `readline()` con bucle `while` y líneas numeradas queda pendiente para la próxima sesión. ⏳
+- Decidido arrancar proyecto integrador "TextAnalyzer" como práctica sólida de portfolio. Esqueleto y README dejados preparados en `PYTHON/02_AVANZADO/02_ARCHIVOS_EXCEPCIONES/PROYECTO_TEXT_ANALYZER/`. ✅
+
+## Sensaciones de sesión (2026-06-04)
+- Sesión con buen aprendizaje tras un tropiezo inicial: lancé una tabla de referencia sin haber mostrado antes un ejemplo real, y Sergi lo señaló correctamente. Aceptado y corregido en el momento.
+- El momento del import espurio fue útil como lección de disciplina: "no importes nada que no sepas para qué sirve". El alumno razonó que VSCode autocompletó y entendió por qué sobra.
+- La confusión con la signatura `str.count(sub[, start[, end]])` fue genuina: no había visto corchetes en firmas todavía. Explicación corta y regla memorable.
+- Sergi preguntó "¿readline() hace un for interno?" y "¿por qué devuelve '' y no None?" — dos preguntas de nivel intermedio que muestran que está pasando de "teclear lo que dice el maestro" a "entender cómo funciona por dentro".
+- Cierre limpio, con un ejercicio (readline + while + numerar) y un proyecto integrador (TextAnalyzer) listos para la próxima sesión.
+- Sergi pidió expresamente subir el ritmo hacia proyectos sólidos publicables en GitHub. Bien: la unidad de archivos es buen momento para empezar a producir artefactos con README y estructura de proyecto.
+
 ## Siguiente paso
-1. Probar el modo `x` (creación exclusiva): útil para crear archivos nuevos sin pisar los existentes.
-2. Probar los modos compuestos `r+`, `w+`, `a+` (lectura + escritura combinados).
-3. Añadir `encoding="utf-8"` a las aperturas para evitar sorpresas con tildes y caracteres no ASCII.
-4. Llevar el `try/except` ya practicado a un `with open(...)` para mostrar el patrón limpio: `with` cierra el archivo aunque haya error, `except` lo captura fuera.
-5. Finalmente: NumPy y JSON.
+1. Retomar `readline()` con bucle `while` + contador manual y líneas numeradas (cierra el micro-paso abierto).
+2. Practicar `readlines()` (lista de líneas) y `for linea in f:` comparado con `readline()` en bucle — decidir cuándo usar cada uno.
+3. Llevar el `try/except FileNotFoundError` ya visto a un `with open(...)` real: capturar archivo inexistente sin romper el script.
+4. Introducir el proyecto integrador `TextAnalyzer` (carpeta `PROYECTO_TEXT_ANALYZER/` ya creada):
+   - v0.1: contar palabras, líneas, caracteres de un fichero.
+   - v0.2: top 5 palabras más frecuentes con `dict` + `sorted(key=lambda ...)`.
+   - v0.3: decorador `@medir_tiempo` envolviendo la función principal.
+   - v0.4: `try/except FileNotFoundError` con mensaje claro al usuario.
+   - v0.5: aceptar varios ficheros y agregar resultados.
+   - v0.6: exportar el informe a un fichero de salida (escritura con `with` y `"w"`).
+5. Más adelante: modos `x` y `+`, `encoding="utf-8"`, `pathlib`, JSON y NumPy.
