@@ -209,15 +209,27 @@ Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `le
 - Cierre limpio, con un ejercicio (readline + while + numerar) y un proyecto integrador (TextAnalyzer) listos para la próxima sesión.
 - Sergi pidió expresamente subir el ritmo hacia proyectos sólidos publicables en GitHub. Bien: la unidad de archivos es buen momento para empezar a producir artefactos con README y estructura de proyecto.
 
+## Ejercicios completados (sesión 2026-06-05)
+- Duración de la clase: 43 minutos.
+- Cerrado el micro-paso abierto: `readline()` con bucle `while` + contador + líneas numeradas en `04-readline-while.py`. ✅
+- Consolidado el patrón `while True: ... if linea == "": break` (no `if not linea:`) para no cortar líneas vacías legítimas. ✅
+- Repasado el por qué de `.strip()`: `readline()` no "aplica" un `\n`, lo trae pegado del archivo; `print()` añade otro → doble salto. `.strip()` quita el del archivo. ✅
+- Ampliado el catálogo: `readlines()` devuelve `list`, cada elemento con su `\n`; `len(lineas)` cuenta líneas sin `count("\n")`. ✅
+- Tabla mental de las 4 formas: `read()`, `readline()` en `while`, `readlines()`, `for linea in f:`. Trade-off: `readlines()` carga todo en memoria; `for linea in f:` es iterador eficiente. ✅
+- Limpiado `03-read.py`: eliminado `from re import split` que quedó colgado de pruebas. ✅
+- Añadida la línea "Hola mundo" a `fichero-test.txt` (queda con 3 líneas, sin `\n` final). ✅
+- Decidido aplazar el arranque de `TextAnalyzer` v0.1 a la próxima sesión por tiempo. ⏳
+
+## Sensaciones de sesión (2026-06-05)
+- Sesión eficiente, sin tropiezos de ritmo.
+- El momento más útil fue la aclaración del `.strip()`: Sergi llegó con la intuición correcta ("`readline()` aplica un salto y el archivo también tiene, se duplica") y solo necesitó el matiz de que `readline()` no "aplica", devuelve tal cual viene del archivo. La idea del "valor vacío del mismo tipo" (`""` al agotar) reforzó la conexión.
+- Sergi añadió `print(lineas)` por iniciativa propia para ver la lista completa con los `\n` escapados — buena lectura del output.
+- Detectado en el cierre: el `print(f"{n}: {linea.strip()}")` quedó colocado **antes** del `if linea == "": break`, lo que produce un `4: ` fantasma al agotarse el archivo. Es un bug menor del ejercicio (no del concepto) y queda como tarea de limpieza para la próxima sesión.
+- Cerrado con sensacion de avance claro y sin saturación.
+
 ## Siguiente paso
-1. Retomar `readline()` con bucle `while` + contador manual y líneas numeradas (cierra el micro-paso abierto).
-2. Practicar `readlines()` (lista de líneas) y `for linea in f:` comparado con `readline()` en bucle — decidir cuándo usar cada uno.
-3. Llevar el `try/except FileNotFoundError` ya visto a un `with open(...)` real: capturar archivo inexistente sin romper el script.
-4. Introducir el proyecto integrador `TextAnalyzer` (carpeta `PROYECTO_TEXT_ANALYZER/` ya creada):
-   - v0.1: contar palabras, líneas, caracteres de un fichero.
-   - v0.2: top 5 palabras más frecuentes con `dict` + `sorted(key=lambda ...)`.
-   - v0.3: decorador `@medir_tiempo` envolviendo la función principal.
-   - v0.4: `try/except FileNotFoundError` con mensaje claro al usuario.
-   - v0.5: aceptar varios ficheros y agregar resultados.
-   - v0.6: exportar el informe a un fichero de salida (escritura con `with` y `"w"`).
+1. Limpieza rápida: recolocar el `print` de `04-readline-while.py` **después** del `if linea == "": break` para que no imprima la iteración vacía. Cierra el bug menor del ejercicio.
+2. Arrancar `TextAnalyzer` v0.1: `contar_basico(ruta)` con `with open`, `read`, `split()` y `splitlines()` (o `count("\n")`). Devolver `dict` con `lineas`, `palabras`, `caracteres`.
+3. Llevar `try/except FileNotFoundError` a un `with open(...)` real (pendiente de la sesión 2026-06-04).
+4. Más adelante en el `TextAnalyzer`: v0.2 (top 5 palabras), v0.3 (`@medir_tiempo`), v0.4 (excepciones en `analizar_fichero`), v0.5 (varios ficheros), v0.6 (exportar informe).
 5. Más adelante: modos `x` y `+`, `encoding="utf-8"`, `pathlib`, JSON y NumPy.

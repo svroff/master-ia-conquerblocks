@@ -12,9 +12,9 @@ Cuando Sergi diga frases como "toca estudio", "continuamos clase", "seguimos", "
 
 1. Trabaja desde el repositorio actual `master-ia-conquerblocks`.
 2. Lee antes de enseñar:
-   - `PYTHON/aprendizaje con OpenCode/perfil-aprendiz.md`
-   - `PYTHON/aprendizaje con OpenCode/estado-actual.md`
-   - `PYTHON/aprendizaje con OpenCode/perfil-maestro.md`
+   - `aprendizaje con OpenCode/perfil-aprendiz.md`
+   - `aprendizaje con OpenCode/estado-actual.md`
+   - `aprendizaje con OpenCode/perfil-maestro.md`
 3. Ejecuta `git status --short --branch`.
 4. Ejecuta `git log -1 --oneline --decorate`.
 5. Resume en pocas lineas: rama/estado, ultimo commit, punto exacto de aprendizaje y primer micro-paso.
@@ -79,4 +79,6 @@ Cuando Sergi cierre una clase o haya progreso claro:
 
 ## Siguiente Tema Conocido
 
-Tras la sesion del 2026-05-15, Sergi esta en Decoradores. El siguiente paso previsto es explicar decoradores con funciones que devuelven valores y por que el `wrapper` necesita `return funcion_original(*args, **kwargs)`.
+Tras la sesion del 2026-06-04 (rama `learning/excepciones`), Sergi esta en **Archivos y Excepciones — metodos de lectura**. Decoradores cerrado. Vistos: `try/except FileNotFoundError`, `open()` con `with` en `w/a/r`, lectura con `for` + `.strip()`, `f.read()`, `len()`, `str.count("\n")`, `f.readline()` con cursor interno y convencion de string vacio al agotarse. Esqueleto del proyecto integrador `TextAnalyzer` iniciado en `PYTHON/02_AVANZADO/02_ARCHIVOS_EXCEPCIONES/PROYECTO_TEXT_ANALYZER/`.
+
+Siguiente micro-paso: cerrar `readline()` con bucle `while` y lineas numeradas; despues comparar `readlines()` frente a `for` y `readline()`; despues arrancar `TextAnalyzer` v0.1 (contar palabras, lineas y caracteres de un fichero).

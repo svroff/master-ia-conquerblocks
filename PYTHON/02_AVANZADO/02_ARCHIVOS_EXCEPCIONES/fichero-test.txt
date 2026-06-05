@@ -1,2 +1,3 @@
+Hola mundo
 Primera línea del archivo.
 Segunda línea del archivo.

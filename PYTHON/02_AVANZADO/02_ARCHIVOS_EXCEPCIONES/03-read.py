@@ -1,5 +1,3 @@
-from re import split
-
 with open("fichero-test.txt", "r") as f:
     primera = f.readline()
     segunda = f.readline()
