@@ -12,9 +12,9 @@ Cuando Sergi diga frases como "toca estudio", "continuamos clase", "seguimos", "
 
 1. Trabaja desde el repositorio actual `master-ia-conquerblocks`.
 2. Lee antes de enseñar:
-   - `aprendizaje con OpenCode/perfil-aprendiz.md`
-   - `aprendizaje con OpenCode/estado-actual.md`
-   - `aprendizaje con OpenCode/perfil-maestro.md`
+   - `Aprendiendo con IA/perfil-aprendiz.md`
+   - `Aprendiendo con IA/estado-actual.md`
+   - `Aprendiendo con IA/perfil-maestro.md`
 3. Ejecuta `git status --short --branch`.
 4. Ejecuta `git log -1 --oneline --decorate`.
 5. Resume en pocas lineas: rama/estado, ultimo commit, punto exacto de aprendizaje y primer micro-paso.

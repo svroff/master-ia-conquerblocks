@@ -14,10 +14,15 @@ Repositorio de prácticas y proyectos del **Máster de Inteligencia Artificial**
 master-ia-conquerblocks/
 ├── .opencode/
 │   └── agent/
+├── Aprendiendo con IA/
+│   ├── perfil-aprendiz.md
+│   ├── estado-actual.md
+│   └── perfil-maestro.md
 ├── PYTHON/
 │   ├── 01_BASICO/
 │   ├── 02_AVANZADO/
-│   └── aprendizaje con OpenCode/
+│   └── bitacora/
+│       └── sesiones.log
 ├── opencode.json
 └── README.md
 ```
@@ -56,9 +61,11 @@ Ingeniería de software y algoritmos.
 
 ---
 
-### [aprendizaje con OpenCode](./PYTHON/aprendizaje%20con%20OpenCode/)
+### [bitacora](./PYTHON/bitacora/)
 
-Sistema de seguimiento personalizado del progreso, con perfil del aprendiz y estado actualizado de cada sesión de estudio.
+Registro cronológico de cada clase: una línea por sesión con fecha, duración, temario y, si aplica, resultados de tests.
+
+Los perfiles del aprendiz y el estado actual del temario viven en la carpeta [`Aprendiendo con IA/`](./Aprendiendo%20con%20IA/) en la raíz del repo.
 
 ---
 
