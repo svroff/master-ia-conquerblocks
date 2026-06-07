@@ -175,7 +175,7 @@ Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `le
 - Diferencia `w` vs `a` demostrada en vivo: `w` borra el contenido previo, `a` añade al final. ✅
 - Lectura iterando con `for linea in f:` y limpieza con `linea.strip()` para evitar el doble salto en pantalla. ✅
 - Sergi aplicó `.strip()` por iniciativa propia antes de que apareciera el problema — buen razonamiento. ✅
-- Reorganización de archivos: `PYTHON/aprendizaje con OpenCode/` movido a `aprendizaje con OpenCode/` en la raíz del repo. ✅
+- Reorganización de archivos: `aprendizaje con OpenCode/` renombrado a `Aprendiendo con IA/` en la raíz del repo; el log movido a `PYTHON/bitacora/`. ✅
 - Limpiado `01-excepciones.py`: eliminado el bloque roto (`except:Ho` y copia.bin erróneo). ✅
 - Discusión profunda sobre rutas: absoluta, relativa al cwd, y absoluta por barra inicial. Sergi corrigió al maestro dos veces con criterio (rechazó `pathlib` por avanzado y eligió configurar VSCode; diagnosticó que `"/fichero-test.txt"` falla por ser absoluta desde `/`). ✅
 - Configurado setting de VSCode `python.terminal.executeInFileDir: true` para que el cwd sea la carpeta del script al ejecutar con ▶. ✅
