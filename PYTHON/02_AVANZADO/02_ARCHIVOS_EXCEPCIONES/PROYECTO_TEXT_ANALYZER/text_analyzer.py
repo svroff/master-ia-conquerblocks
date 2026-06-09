@@ -29,18 +29,25 @@ PISTAS PASO A PASO:
 
 def contar_basico(ruta):
     # 1. Abre el archivo y guarda su contenido en una variable
-
-    # 2. Cuenta los caracteres totales
-
-    # 3. Cuenta las palabras
-
-    # 4. Cuenta las líneas
-
-    # 5. Devuelve el diccionario con los resultados
-    pass
+    with open(ruta, "r", encoding="utf-8") as archivo:
+        leer_archivo = archivo.read()
+        # 2. Cuenta los caracteres totales
+        caracteres_totales = len(leer_archivo)
+        # 3. Cuenta las palabras
+        palabras_totales = len(leer_archivo.split())
+        # 4. Cuenta las líneas
+        # lineas_totales = len(leer_archivo.split("\n"))
+        lineas_totales = len(leer_archivo.splitlines())
+        # 5. Devuelve el diccionario con los resultados
+    return {
+        "lineas": lineas_totales,
+        "palabras": palabras_totales,
+        "caracteres": caracteres_totales,
+    }
 
 
 if __name__ == "__main__":
     # Descomenta la línea de abajo para probar tu función cuando esté lista:
-    # print(contar_basico("samples/ejemplo.txt"))
-    pass
+    contador_de_texto = contar_basico("samples/ejemplo.txt")
+    for clave, valor in contador_de_texto.items():
+        print(f"{clave} : {valor}")

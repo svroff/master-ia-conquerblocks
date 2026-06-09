@@ -79,5 +79,13 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 - Sensación del alumno: avance claro, sin saturación, y petición explícita de delegar la inspección de archivos al maestro.
 - Próximo paso recomendado: limpieza del `print` mal ubicado, arrancar `TextAnalyzer` v0.1 (`contar_basico`), y llevar `try/except FileNotFoundError` a un `with open(...)` real.
 
+### Sesión 2026-06-09 — TextAnalyzer v0.1 y retorno de diccionarios
+- Duración de la clase: 55 minutos.
+- Sergi implementó `contar_basico(ruta)` completo: `with open`, `.read()`, `len()`, `.split()`, `.splitlines()` y retorno de diccionario.
+- Referencia real del sample verificada: `{'lineas': 7, 'palabras': 55, 'caracteres': 359}`. Evitar usar números ficticios en enunciados si el alumno pide referencia exacta.
+- Lección clave: `return { ... }` crea y devuelve un diccionario literal; no hace falta declarar antes `dic = {}`. `.items()` funciona porque la variable que recibe el retorno contiene un diccionario.
+- Ajuste pedagógico útil: cuando haya `dict` literal, explicar que la forma `{clave: valor}` manda más que el nombre de la variable.
+- Próximo paso recomendado: aplicar `try/except FileNotFoundError` a `with open(...)` real y después avanzar a `TextAnalyzer` v0.2.
+
 ## Sistema de memoria
 Al inicio de cada sesión, leer `perfil-aprendiz.md`, `estado-actual.md` y este fichero para retomar contexto completo.

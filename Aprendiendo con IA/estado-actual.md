@@ -1,7 +1,7 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos. `open()` con `with` practicado en modos `w`/`a`/`r`; lectura iterando con `for` + `.strip()` practicada. `f.read()` practicado y diferenciado de la lectura con `for`; conteo de caracteres con `len()` y de líneas con `str.count("\n")` practicado. `f.readline()` introducido (cursor interno + convención de string vacío al agotarse). Próximo micro-paso: bucle `while` con `readline()` y líneas numeradas. Paralelamente: proyecto integrador `TextAnalyzer` iniciado como práctica sólida de portfolio.
+Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos. `open()` con `with` practicado en modos `w`/`a`/`r`; lectura iterando con `for` + `.strip()` practicada. `f.read()`, `f.readline()` con `while`, `readlines()` y lectura con `for` practicados y comparados. `TextAnalyzer` v0.1 implementado con `contar_basico(ruta)`: abre fichero con `with`, lee con `.read()`, cuenta caracteres con `len()`, palabras con `.split()`, líneas con `.splitlines()` y devuelve un `dict`. Próximo micro-paso: llevar `try/except FileNotFoundError` a un `with open(...)` real y después preparar `TextAnalyzer` v0.2.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
@@ -228,8 +228,25 @@ Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `le
 - Cerrado con sensacion de avance claro y sin saturación.
 
 ## Siguiente paso
-1. Limpieza rápida: recolocar el `print` de `04-readline-while.py` **después** del `if linea == "": break` para que no imprima la iteración vacía. Cierra el bug menor del ejercicio.
-2. Arrancar `TextAnalyzer` v0.1: `contar_basico(ruta)` con `with open`, `read`, `split()` y `splitlines()` (o `count("\n")`). Devolver `dict` con `lineas`, `palabras`, `caracteres`.
-3. Llevar `try/except FileNotFoundError` a un `with open(...)` real (pendiente de la sesión 2026-06-04).
-4. Más adelante en el `TextAnalyzer`: v0.2 (top 5 palabras), v0.3 (`@medir_tiempo`), v0.4 (excepciones en `analizar_fichero`), v0.5 (varios ficheros), v0.6 (exportar informe).
+1. Llevar `try/except FileNotFoundError` a un `with open(...)` real (pendiente de la sesión 2026-06-04).
+2. Repasar brevemente `return { ... }`: literal de diccionario devuelto directamente, equivalente a crear `dic = {...}` y devolverlo.
+3. Arrancar `TextAnalyzer` v0.2: top 5 palabras con normalización mínima.
+4. Más adelante en el `TextAnalyzer`: v0.3 (`@medir_tiempo`), v0.4 (excepciones en `analizar_fichero`), v0.5 (varios ficheros), v0.6 (exportar informe).
 5. Más adelante: modos `x` y `+`, `encoding="utf-8"`, `pathlib`, JSON y NumPy.
+
+## Ejercicios completados (sesión 2026-06-09)
+- Duración de la clase: 55 minutos.
+- Implementado `TextAnalyzer` v0.1 en `PROYECTO_TEXT_ANALYZER/text_analyzer.py`. ✅
+- `contar_basico(ruta)` abre el fichero con `with open(ruta, "r", encoding="utf-8")`, lee todo con `.read()` y calcula tres métricas. ✅
+- Practicado `len(contenido)` para caracteres, `len(contenido.split())` para palabras y `len(contenido.splitlines())` para líneas. ✅
+- Devuelto el resultado como diccionario con claves `lineas`, `palabras` y `caracteres`. ✅
+- Verificado con `samples/ejemplo.txt`: `{'lineas': 7, 'palabras': 55, 'caracteres': 359}`. ✅
+- Sergi preguntó si la salida debía ser diccionario sí o sí y entendió que el objetivo era devolver varios datos etiquetados. ✅
+- Sergi probó la forma directa `return { ... }` y entendió que `{clave: valor}` crea un diccionario aunque no exista una variable llamada `dic`. ✅
+- Corregido bug menor de `04-readline-while.py`: el `print()` queda después del `if linea == "": break`, evitando la línea fantasma al agotarse el archivo. ✅
+
+## Sensaciones de sesión (2026-06-09)
+- Sesión de proyecto real, clara y productiva.
+- Sergi implementó la función completa, pidió referencias exactas de salida y verificó comportamiento con criterio.
+- La pregunta sobre `return { ... }` fue importante: conectó sintaxis literal de diccionarios con flujo real de retorno y posterior `.items()`.
+- Cierre con victoria clara: `TextAnalyzer` v0.1 ya funciona.
