@@ -19,7 +19,7 @@ El objetivo de esta versión es implementar una sola función: `contar_basico(ru
 ```python
 >>> from text_analyzer import contar_basico
 >>> contar_basico("samples/ejemplo.txt")
-{'lineas': 7, 'palabras': 35, 'caracteres': 240}
+{'lineas': 7, 'palabras': 55, 'caracteres': 360}
 ```
 
 Los números exactos dependerán del contenido del fichero, pero la forma del diccionario es siempre la misma: tres claves, tres enteros.
@@ -115,7 +115,7 @@ python3 -c "from text_analyzer import contar_basico; print(contar_basico('sample
 Lo que esperas ver es un `dict` con tres números. Los números exactos no importan siempre que sean razonables para un fichero de 7 líneas:
 
 - `caracteres` debería ser mayor que 100 (es un texto con 7 frases).
-- `palabras` debería estar entre 25 y 50.
+- `palabras` debería estar alrededor de 55.
 - `lineas` debería ser exactamente 7.
 
 Si los tres números son razonables, **v0.1 está listo** ✅.
@@ -129,7 +129,7 @@ Si los tres números son razonables, **v0.1 está listo** ✅.
 | Olvidaste `encoding="utf-8"` y el fichero tiene tildes/ñ | Caracteres raros tipo `Ã±` en el print | Mira el `print(contenido)` durante la Capa 1. Si ves `Ã±` en lugar de `ñ`, es esto. |
 | Usaste `split(" ")` en vez de `split()` | El conteo de palabras es mayor del esperado | `split(" ")` solo parte por un único espacio. Si el fichero tiene dobles espacios o tabs, los cuenta mal. Usa `split()` a secas. |
 | Usaste `count("\n")` y el fichero no termina en salto | El conteo de líneas es 6 en vez de 7 | Mira las últimas líneas de `samples/ejemplo.txt` con `cat -A` o con un editor que muestre saltos. Si no hay `\n` al final, usa `splitlines()`. |
-| `return` antes de calcular las tres variables | `TypeError: cannot unpack` o `NameError` | El `return` va al final, con los tres campos ya calculados. |
+| `return` antes de calcular las tres variables | `NameError` o `UnboundLocalError` | El `return` va al final, con los tres campos ya calculados. |
 
 ---
 
@@ -139,7 +139,7 @@ El proyecto sigue con cinco versiones más, una por sesión. **No intentes hacer
 
 | Versión | Qué añade | Para qué |
 |---|---|---|
-| ✅ v0.1 | `contar_basico(ruta)`: nº de líneas, palabras y caracteres | Juntar `read()`, `split()`, `len()`, diccionarios |
+| ✅ v0.1 | `contar_basico(ruta)`: nº de líneas, palabras y caracteres, con `FileNotFoundError` controlado | Juntar `read()`, `split()`, `len()`, diccionarios y excepciones |
 | ⏳ v0.2 | `top_palabras(ruta, n=5)`: las n palabras más frecuentes | Practicar `dict` de conteo y `sorted(key=lambda...)` |
 | ⏳ v0.3 | Decorador `@medir_tiempo` que envuelve la función principal | Llevar los decoradores a un caso real (no solo `@lru_cache`) |
 | ⏳ v0.4 | `analizar_fichero(ruta)` con `try/except FileNotFoundError` | Combinar lo que ya sabes en una función de entrada robusta |
@@ -166,4 +166,4 @@ cd PYTHON/02_AVANZADO/02_ARCHIVOS_EXCEPCIONES/PROYECTO_TEXT_ANALYZER
 python3 text_analyzer.py samples/ejemplo.txt
 ```
 
-Por ahora, en v0.1, el bloque `if __name__ == "__main__":` solo comprueba que el archivo se importa sin errores. Más adelante (v0.4) ahí irá la llamada real a `analizar_fichero`.
+Por ahora, en v0.1, el script mantiene una prueba directa al final del archivo. Más adelante, cuando toque módulos/imports, se reorganizará la entrada principal del programa.

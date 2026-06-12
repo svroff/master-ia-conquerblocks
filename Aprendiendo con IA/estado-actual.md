@@ -1,7 +1,7 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos. `open()` con `with` practicado en modos `w`/`a`/`r`; lectura iterando con `for` + `.strip()` practicada. `f.read()`, `f.readline()` con `while`, `readlines()` y lectura con `for` practicados y comparados. `TextAnalyzer` v0.1 implementado con `contar_basico(ruta)`: abre fichero con `with`, lee con `.read()`, cuenta caracteres con `len()`, palabras con `.split()`, líneas con `.splitlines()` y devuelve un `dict`. Próximo micro-paso: llevar `try/except FileNotFoundError` a un `with open(...)` real y después preparar `TextAnalyzer` v0.2.
+Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos. `open()` con `with` practicado en modos `w`/`a`/`r`; lectura iterando con `for` + `.strip()` practicada. `f.read()`, `f.readline()` con `while`, `readlines()` y lectura con `for` practicados y comparados. `TextAnalyzer` v0.1 implementado con `contar_basico(ruta)`: abre fichero con `with`, lee con `.read()`, cuenta caracteres con `len()`, palabras con `.split()`, líneas con `.splitlines()` y devuelve un `dict`. `try/except FileNotFoundError` ya está aplicado a un `with open(...)` real dentro de `contar_basico`; si el archivo no existe, devuelve un `dict` con ceros para mantener el mismo tipo de retorno. Próximo micro-paso: empezar `TextAnalyzer` v0.2, top 5 palabras con normalización mínima.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
@@ -228,11 +228,11 @@ Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `le
 - Cerrado con sensacion de avance claro y sin saturación.
 
 ## Siguiente paso
-1. Llevar `try/except FileNotFoundError` a un `with open(...)` real (pendiente de la sesión 2026-06-04).
-2. Repasar brevemente `return { ... }`: literal de diccionario devuelto directamente, equivalente a crear `dic = {...}` y devolverlo.
-3. Arrancar `TextAnalyzer` v0.2: top 5 palabras con normalización mínima.
-4. Más adelante en el `TextAnalyzer`: v0.3 (`@medir_tiempo`), v0.4 (excepciones en `analizar_fichero`), v0.5 (varios ficheros), v0.6 (exportar informe).
-5. Más adelante: modos `x` y `+`, `encoding="utf-8"`, `pathlib`, JSON y NumPy.
+1. Arrancar `TextAnalyzer` v0.2: top 5 palabras con normalización mínima.
+2. Practicar conteo con diccionario: crear clave si no existe, sumar si ya existe.
+3. Ordenar palabras por frecuencia y devolver solo las 5 primeras.
+4. Más adelante en el `TextAnalyzer`: v0.3 (`@medir_tiempo`), v0.4 (función integradora `analizar_fichero`), v0.5 (varios ficheros), v0.6 (exportar informe).
+5. Más adelante: modos `x` y `+`, `pathlib`, JSON, NumPy y POO.
 
 ## Ejercicios completados (sesión 2026-06-09)
 - Duración de la clase: 55 minutos.
@@ -250,3 +250,20 @@ Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `le
 - Sergi implementó la función completa, pidió referencias exactas de salida y verificó comportamiento con criterio.
 - La pregunta sobre `return { ... }` fue importante: conectó sintaxis literal de diccionarios con flujo real de retorno y posterior `.items()`.
 - Cierre con victoria clara: `TextAnalyzer` v0.1 ya funciona.
+
+## Ejercicios completados (sesión 2026-06-12)
+- Duración de la clase: 60 minutos.
+- Aplicado `try/except FileNotFoundError` a un `with open(...)` real dentro de `contar_basico(ruta)`. ✅
+- Entendido que el `open()` es la zona peligrosa: si la ruta no existe, Python salta al `except`. ✅
+- Detectado y corregido el problema de poner el `return` del diccionario dentro del `except`: si el archivo existe, la función terminaba devolviendo `None` implícito. ✅
+- Visto el error `UnboundLocalError` cuando se intenta devolver variables que no se crearon porque el `open()` falló. ✅
+- Decidido diseño final: en caso de `FileNotFoundError`, `contar_basico()` devuelve un diccionario con ceros para mantener siempre el mismo tipo de retorno (`dict`). ✅
+- Verificado manualmente que una ruta inexistente muestra mensaje controlado y devuelve `{"lineas": 0, "palabras": 0, "caracteres": 0}`. ✅
+- Explicado que `encoding="utf-8"` no siempre es obligatorio en Linux, pero es buena práctica para leer tildes, `ñ` y evitar sorpresas entre sistemas. ✅
+- Limpieza del archivo `text_analyzer.py`: cálculos fuera del `with`, comentarios más claros y bloque comentado con enunciado de `TextAnalyzer` v0.2. ✅
+
+## Sensaciones de sesión (2026-06-12)
+- La clase tuvo que reiniciarse porque el maestro empujó una solución (`return None` + proteger el `for`) sin cerrar antes el diseño de retorno. Sergi lo detectó correctamente y pidió volver a empezar.
+- Lección pedagógica: antes de tocar el código, decidir qué contrato debe cumplir la función. En este caso, si normalmente devuelve `dict`, en error también debe devolver `dict`.
+- Sergi volvió a marcar una regla importante: no introducir `if __name__ == "__main__"` si aún no se ha enseñado. Para esta etapa, mantener el script simple es mejor.
+- Cierre con victoria clara: `TextAnalyzer` v0.1 queda más robusto ante archivos inexistentes y listo para empezar v0.2.

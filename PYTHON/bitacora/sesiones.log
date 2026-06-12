@@ -2,3 +2,4 @@
 2026-06-05  45min  f.read() y readline(), len/str.count, esqueleto TextAnalyzer ✅  tests:0/0
 2026-06-05  43min  readline+while+numerar, readlines, comparativa 4 formas, housekeeping memoria ✅  tests:0/0
 2026-06-09  55min  TextAnalyzer v0.1, conteo basico, retorno dict y validacion sample ✅  tests:1/1
+2026-06-12  60min  TextAnalyzer v0.1 robusto con try/except FileNotFoundError y retorno dict seguro ✅  tests:2/2

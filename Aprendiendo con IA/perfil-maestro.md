@@ -87,5 +87,13 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 - Ajuste pedagógico útil: cuando haya `dict` literal, explicar que la forma `{clave: valor}` manda más que el nombre de la variable.
 - Próximo paso recomendado: aplicar `try/except FileNotFoundError` a `with open(...)` real y después avanzar a `TextAnalyzer` v0.2.
 
+### Sesión 2026-06-12 — Excepciones reales en TextAnalyzer
+- Duración de la clase: 60 minutos.
+- Sergi detectó que el primer enfoque del maestro (`return None` y proteger el `for`) era un mal diseño para este momento: mezclaba contrato de función y programa principal antes de explicar la decisión.
+- Regla reforzada: antes de enseñar `try/except` dentro de una función, decidir el contrato de retorno. Si la función normalmente devuelve `dict`, intentar que en error también devuelva `dict`.
+- Evitar introducir `if __name__ == "__main__"` antes de explicar módulos/imports. Sergi lo borró con criterio porque todavía no corresponde al temario actual.
+- Para errores de archivo en este nivel, patrón pedagógico preferido: `try` alrededor de `with open(...)`, `except FileNotFoundError`, mensaje claro y retorno seguro del mismo tipo.
+- Próximo paso recomendado: empezar `TextAnalyzer` v0.2 por conteo manual con diccionario antes de ordenar top 5.
+
 ## Sistema de memoria
 Al inicio de cada sesión, leer `perfil-aprendiz.md`, `estado-actual.md` y este fichero para retomar contexto completo.

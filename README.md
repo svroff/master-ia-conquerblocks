@@ -2,18 +2,43 @@
 
 ![Python Version](https://img.shields.io/badge/Python-3.11+-blue.svg)
 ![Status](https://img.shields.io/badge/Status-En%20Progreso-green)
-![Focus](https://img.shields.io/badge/Focus-AI%20%26%20Data%20Science-orange)
+![Current](https://img.shields.io/badge/Actual-Python%20Avanzado-orange)
+![Branch](https://img.shields.io/badge/Rama-learning%2Fexcepciones-purple)
 
-Repositorio de prácticas y proyectos del **Máster de Inteligencia Artificial** de Conquer Blocks. Documenta el progreso desde fundamentos de programación hasta implementación de modelos de IA.
+Repositorio de prácticas, apuntes y proyectos del **Máster en Inteligencia Artificial de Conquer Blocks**.
+
+El objetivo no es solo guardar ejercicios: este repo documenta el progreso real desde fundamentos de programación hasta proyectos aplicables a IA, con trazabilidad de sesiones, ramas de aprendizaje y proyectos incrementales.
 
 ---
 
-## Estructura del Proyecto
+## Estado Actual
 
-```
+**Módulo activo:** Python Avanzado  
+**Tema actual:** Manejo de Archivos y Excepciones  
+**Rama de trabajo:** `learning/excepciones`  
+**Proyecto integrador activo:** [`TextAnalyzer`](./PYTHON/02_AVANZADO/02_ARCHIVOS_EXCEPCIONES/PROYECTO_TEXT_ANALYZER/)
+
+Último avance consolidado:
+
+- Decoradores cerrado para el nivel actual.
+- Practicados `try/except FileNotFoundError`, `open()`, `with`, modos `w`, `a`, `r` y lectura de ficheros.
+- Comparadas cuatro formas de lectura: `read()`, `readline()` con `while`, `readlines()` y `for linea in f`.
+- Implementado `TextAnalyzer v0.1`: conteo de líneas, palabras y caracteres desde un fichero de texto, con manejo de `FileNotFoundError`.
+
+Próximos pasos:
+
+- Empezar `TextAnalyzer v0.2`: top 5 palabras con normalización mínima.
+- Más adelante: JSON, modos avanzados de fichero, NumPy, Pandas y POO.
+
+---
+
+## Estructura Del Repo
+
+```text
 master-ia-conquerblocks/
 ├── .opencode/
 │   └── agent/
+│       └── maestro.md
 ├── Aprendiendo con IA/
 │   ├── perfil-aprendiz.md
 │   ├── estado-actual.md
@@ -21,6 +46,11 @@ master-ia-conquerblocks/
 ├── PYTHON/
 │   ├── 01_BASICO/
 │   ├── 02_AVANZADO/
+│   │   ├── 01_FUNCIONES/
+│   │   └── 02_ARCHIVOS_EXCEPCIONES/
+│   │       ├── EJERCICIOS/
+│   │       ├── EXTRAS-CLASE/
+│   │       └── PROYECTO_TEXT_ANALYZER/
 │   └── bitacora/
 │       └── sesiones.log
 ├── opencode.json
@@ -29,49 +59,94 @@ master-ia-conquerblocks/
 
 ---
 
-## PYTHON
+## Python Básico
 
-### [01_BASICO](./PYTHON/01_BASICO/) ✅
+Carpeta: [`PYTHON/01_BASICO`](./PYTHON/01_BASICO/)
 
-Fundamentos de programación y estructuras de datos.
+Estado: **completado**
 
-| Módulo | Contenido |
+| Bloque | Contenido |
 |--------|-----------|
-| Primeros Ejercicios | Variables, tipos de datos, operadores |
-| Condicionales | `if/elif/else`, lógica de decisión |
-| Listas y Bucles | `for`, `while`, manipulación de listas (3 bloques progresivos) |
-| Sets y Tuplas | Estructuras inmutables, operaciones de conjuntos |
-| Diccionarios | Clave-valor, anidamiento, agrupaciones (3 bloques progresivos) |
-| Arrays y Librerías | Introducción a NumPy, operaciones vectorizadas (3 bloques progresivos) |
+| Primeros ejercicios | Variables, tipos de datos, operadores |
+| Condicionales | `if`, `elif`, `else`, lógica de decisión |
+| Listas y bucles | `for`, `while`, índices, acumuladores |
+| Sets y tuplas | Estructuras inmutables y operaciones de conjunto |
+| Diccionarios | Clave-valor, anidamiento, agrupaciones |
+| Arrays y librerías | Introducción a NumPy y operaciones vectorizadas |
 
 ---
 
-### [02_AVANZADO](./PYTHON/02_AVANZADO/) — en curso
+## Python Avanzado
 
-Ingeniería de software y algoritmos.
+Carpeta: [`PYTHON/02_AVANZADO`](./PYTHON/02_AVANZADO/)
+
+Estado: **en curso**
 
 | Módulo | Estado | Contenido |
 |--------|--------|-----------|
-| Funciones | ✅ | `def`, `*args`, `**kwargs`, scope, retorno múltiple |
-| Lambdas | ✅ | Funciones anónimas, `map()`, `filter()`, `sorted(key=...)` |
-| Recursividad | ✅ | Casos base/recursivos, pila de llamadas |
-| Manejo de Archivos y Excepciones | En curso | `try/except`, lectura/escritura de ficheros, JSON |
-| POO | Próximo | Clases, herencia, polimorfismo, dunder methods |
-| NumPy & Pandas | Próximo | Análisis y manipulación de datos masivos |
+| Funciones | Completado | `def`, parámetros, `*args`, `**kwargs`, scope, retorno múltiple |
+| Lambdas | Completado | Funciones anónimas, `map()`, `filter()`, `sorted(key=...)` |
+| Recursividad | Completado | Caso base, caso recursivo, pila de llamadas |
+| Memoización | Completado | Cache manual con `dict`, claves simples y tuplas, `@lru_cache` |
+| Decoradores | Completado | `@decorador`, `wrapper`, retorno de funciones decoradas |
+| Archivos y Excepciones | En curso | `try/except`, `open()`, `with`, lectura/escritura, proyecto integrador |
+| POO | Próximo | Clases, objetos, herencia, polimorfismo, dunder methods |
+| NumPy y Pandas | Próximo | Análisis y manipulación de datos |
 
 ---
 
-### [bitacora](./PYTHON/bitacora/)
+## Proyecto Actual: TextAnalyzer
 
-Registro cronológico de cada clase: una línea por sesión con fecha, duración, temario y, si aplica, resultados de tests.
+Carpeta: [`PROYECTO_TEXT_ANALYZER`](./PYTHON/02_AVANZADO/02_ARCHIVOS_EXCEPCIONES/PROYECTO_TEXT_ANALYZER/)
 
-Los perfiles del aprendiz y el estado actual del temario viven en la carpeta [`Aprendiendo con IA/`](./Aprendiendo%20con%20IA/) en la raíz del repo.
+Primer proyecto integrador del bloque de Python Avanzado. Une funciones, lectura de ficheros, strings, listas, diccionarios y validación por capas.
+
+Versión actual: **v0.1 completada**
+
+Función implementada:
+
+```python
+contar_basico(ruta)
+```
+
+Devuelve un diccionario con tres métricas:
+
+```python
+{
+    "lineas": 7,
+    "palabras": 55,
+    "caracteres": 360,
+}
+```
+
+Roadmap del proyecto:
+
+| Versión | Estado | Objetivo |
+|---------|--------|----------|
+| v0.1 | Completada | Contar líneas, palabras y caracteres |
+| v0.2 | Próxima | Top 5 palabras más frecuentes |
+| v0.3 | Próxima | Decorador `@medir_tiempo` |
+| v0.4 | Próxima | Excepciones en lectura de ficheros |
+| v0.5 | Próxima | Analizar varios ficheros |
+| v0.6 | Próxima | Exportar informe |
+
+---
+
+## Memoria De Aprendizaje
+
+La carpeta [`Aprendiendo con IA`](./Aprendiendo%20con%20IA/) guarda el sistema de continuidad de estudio:
+
+- `perfil-aprendiz.md`: cómo aprende Sergi, preferencias y reglas de tutoría.
+- `estado-actual.md`: punto exacto del temario y resumen de sesiones.
+- `perfil-maestro.md`: reglas pedagógicas del agente tutor.
+
+La bitácora resumida vive en [`PYTHON/bitacora/sesiones.log`](./PYTHON/bitacora/sesiones.log).
 
 ---
 
 ## OpenCode Maestro
 
-Este repo incluye el agente de OpenCode [`maestro`](./.opencode/agent/maestro.md) para mantener la misma dinámica de mentoría Python en Ubuntu Horus, Mac M3 Pro y workstation Ubuntu Orion.
+Este repo incluye el agente [`maestro`](./.opencode/agent/maestro.md), usado para retomar clases con contexto real del aprendizaje.
 
 En cualquier equipo:
 
@@ -80,29 +155,42 @@ git pull
 opencode
 ```
 
-Después, dentro de OpenCode, basta con decir:
+Dentro de OpenCode:
 
 ```text
 Continuamos clase
 ```
 
-El agente leerá la memoria de aprendizaje del repo, revisará Git y retomará la clase desde el último punto.
+El agente lee la memoria de aprendizaje, revisa Git y retoma desde el siguiente micro-paso.
 
 ---
 
-## Tecnologías
+## Stack Objetivo
 
-- **Lenguaje:** Python 3.11+
-- **IDE:** VS Code
-- **Control de versiones:** Git & GitHub
-- **Librerías actuales:** NumPy
-- **Librerías próximas:** Pandas, Matplotlib, Scikit-learn, TensorFlow, Keras, PyTorch
+| Área | Tecnologías |
+|------|-------------|
+| Lenguaje base | Python 3.11+ |
+| Entorno | VS Code, terminal Linux, Git, GitHub |
+| Datos | NumPy, Pandas, Matplotlib |
+| Machine Learning | Scikit-learn |
+| Deep Learning | TensorFlow, Keras, PyTorch |
+| IA generativa | OpenAI API, Hugging Face, LLMs locales |
+| Despliegue | FastAPI, Docker |
 
 ---
 
-## Proyecto Capstone
+## Proyecto Capstone Previsto
 
-RAG local con LLM + Elasticsearch — stack: Python, LlamaIndex o LangChain, Ollama, FastAPI.
+RAG local con LLM + Elasticsearch.
+
+Stack previsto:
+
+- Python
+- LlamaIndex o LangChain
+- Ollama
+- Elasticsearch
+- FastAPI
+- Docker
 
 ---
 
