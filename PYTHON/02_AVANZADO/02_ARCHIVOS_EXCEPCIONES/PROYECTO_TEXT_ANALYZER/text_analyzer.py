@@ -67,7 +67,28 @@ def contar_basico(ruta):
 # 5. Ordenar el diccionario por frecuencia.
 # 6. Devolver solo las 5 primeras palabras.
 
-contador_de_texto = contar_basico("samples/ejemplo.txt")
 
-for clave, valor in contador_de_texto.items():
-    print(f"{clave} : {valor}")
+def contar_palabras(ruta):
+    try:
+        with open(ruta, "r", encoding="utf-8") as archivo:
+            leer_archivo = archivo.read()
+            leer_archivo = leer_archivo.lower()
+            leer_archivo_palabras_separadas = leer_archivo.split()
+    except FileNotFoundError:
+        print("Archivo no encontrado. \n")
+        return {"palabras": 0}
+
+    conteo_palabras = {}
+    for p in leer_archivo_palabras_separadas:
+        if p in conteo_palabras:
+            conteo_palabras[p] += 1
+        else:
+            conteo_palabras[p] = 1
+
+    return conteo_palabras
+
+
+palabras_frecuentes = contar_palabras(
+    "/home/horus/Documentos/master-ia-conquerblocks/PYTHON/02_AVANZADO/02_ARCHIVOS_EXCEPCIONES/PROYECTO_TEXT_ANALYZER/samples/ejemplo.txt"
+)
+print(palabras_frecuentes)

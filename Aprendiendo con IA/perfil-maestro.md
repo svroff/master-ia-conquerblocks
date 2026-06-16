@@ -95,5 +95,12 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 - Para errores de archivo en este nivel, patrón pedagógico preferido: `try` alrededor de `with open(...)`, `except FileNotFoundError`, mensaje claro y retorno seguro del mismo tipo.
 - Próximo paso recomendado: empezar `TextAnalyzer` v0.2 por conteo manual con diccionario antes de ordenar top 5.
 
+### Sesión 2026-06-16 — TextAnalyzer v0.2 y pistas sin chivar
+- Duración de la clase: 60 minutos.
+- Sergi pidió reubicación porque el maestro empezó demasiado rápido. Regla: al iniciar una sesión, recordar primero dónde estamos, qué quedó cerrado y cuál es el micro-paso actual antes de pedir que escriba código.
+- Sergi implementó `contar_palabras(ruta)` para devolver un diccionario palabra -> frecuencia usando `.lower()`, `.split()` y conteo manual con `dict`.
+- Error del maestro: al dar una pista sobre ordenar, escribió una línea demasiado completa de `sorted(..., key=lambda..., reverse=True)`. Regla reforzada: si Sergi pide pistas, no escribir la solución completa; dar conceptos, posiciones, nombres de herramientas y huecos para que él complete.
+- Próximo paso recomendado: retomar desde ordenar `conteo_palabras.items()` por frecuencia, recordando que `sorted(key=...)` ya se vio en lambdas pero puede estar oxidado.
+
 ## Sistema de memoria
 Al inicio de cada sesión, leer `perfil-aprendiz.md`, `estado-actual.md` y este fichero para retomar contexto completo.

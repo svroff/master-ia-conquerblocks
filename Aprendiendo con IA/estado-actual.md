@@ -1,7 +1,7 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos. `open()` con `with` practicado en modos `w`/`a`/`r`; lectura iterando con `for` + `.strip()` practicada. `f.read()`, `f.readline()` con `while`, `readlines()` y lectura con `for` practicados y comparados. `TextAnalyzer` v0.1 implementado con `contar_basico(ruta)`: abre fichero con `with`, lee con `.read()`, cuenta caracteres con `len()`, palabras con `.split()`, líneas con `.splitlines()` y devuelve un `dict`. `try/except FileNotFoundError` ya está aplicado a un `with open(...)` real dentro de `contar_basico`; si el archivo no existe, devuelve un `dict` con ceros para mantener el mismo tipo de retorno. Próximo micro-paso: empezar `TextAnalyzer` v0.2, top 5 palabras con normalización mínima.
+Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos. `open()` con `with` practicado en modos `w`/`a`/`r`; lectura iterando con `for` + `.strip()` practicada. `f.read()`, `f.readline()` con `while`, `readlines()` y lectura con `for` practicados y comparados. `TextAnalyzer` v0.1 implementado con `contar_basico(ruta)`: abre fichero con `with`, lee con `.read()`, cuenta caracteres con `len()`, palabras con `.split()`, líneas con `.splitlines()` y devuelve un `dict`. `try/except FileNotFoundError` ya está aplicado a un `with open(...)` real dentro de `contar_basico`; si el archivo no existe, devuelve un `dict` con ceros para mantener el mismo tipo de retorno. `TextAnalyzer` v0.2 iniciado: `contar_palabras(ruta)` lee el fichero, normaliza a minúsculas, separa con `.split()` y devuelve un diccionario palabra -> número de apariciones. Próximo micro-paso: ordenar las parejas del diccionario por frecuencia y sacar top 5 sin chivar la solución completa.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
@@ -267,3 +267,15 @@ Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `le
 - Lección pedagógica: antes de tocar el código, decidir qué contrato debe cumplir la función. En este caso, si normalmente devuelve `dict`, en error también debe devolver `dict`.
 - Sergi volvió a marcar una regla importante: no introducir `if __name__ == "__main__"` si aún no se ha enseñado. Para esta etapa, mantener el script simple es mejor.
 - Cierre con victoria clara: `TextAnalyzer` v0.1 queda más robusto ante archivos inexistentes y listo para empezar v0.2.
+
+## Ejercicios completados (sesión 2026-06-16)
+- Duración de la clase: 60 minutos.
+- Retomado `TextAnalyzer` tras v0.1 y explicado de nuevo el punto exacto: v0.2 busca top 5 palabras, pero primero hay que construir el diccionario de conteo. ✅
+- Creado `test_contador.py` con una lista mínima `['python', 'es', 'python']` para practicar el patrón de diccionario: crear clave con 1 si no existe, sumar 1 si ya existe. ✅
+- Implementada en `text_analyzer.py` la función `contar_palabras(ruta)`: abre fichero con `with`, lee contenido, aplica `.lower()`, separa palabras con `.split()` y devuelve un diccionario con frecuencias. ✅
+- Queda pendiente ordenar el diccionario por frecuencia y sacar las 5 palabras más repetidas. ⏳
+
+## Sensaciones de sesión (2026-06-16)
+- El maestro fue demasiado rápido al iniciar la clase; Sergi pidió parar y recapitular dónde estábamos. Regla reforzada: después de pausa o cambio de sesión, reubicar primero el mapa del proyecto antes de pedir código.
+- Sergi pidió pistas para ordenar sin que se le resolviera. El maestro dio una línea demasiado completa con `sorted(..., key=lambda..., reverse=True)`, incumpliendo la regla de no chivar solución. Regla reforzada: cuando Sergi pida pistas, dar solo piezas conceptuales y dejar huecos reales.
+- Buen avance del alumno: llegó por sí mismo a tener una función que devuelve un diccionario con cada palabra y sus apariciones.
