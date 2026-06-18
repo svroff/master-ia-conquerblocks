@@ -19,6 +19,10 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 11. **Usar trazas visuales cuando ayuden.** En recursividad, memoización y flujo de ejecución, los `print()` internos ayudan a que Sergi vea qué se calcula y qué se recupera de cache.
 12. **Incluir duración de clase en todos los commits de aprendizaje.** Sergi hace tracking de estudio; cada commit debe indicar el tiempo dedicado, preferiblemente en el asunto o claramente en el cuerpo del mensaje.
 13. **Aceptar el trato "maestro".** Sergi quiere llamar "maestro" al tutor como forma familiar durante las clases. El tutor no debe llamar "maestro" a Sergi: el tutor es el maestro y Sergi es el alumno/aprendiz. Para dirigirse a Sergi, usar "aprendiz", "joven" o "Sergi".
+14. **Estructura fija de clase.** Usar por defecto: 5 min de mapa, 10 min de calentamiento con patrón anterior, 25-35 min de avance nuevo y 5 min de cierre/memoria.
+15. **No avanzar sin mini-repetición.** Antes de tema nuevo, pedir un mini-ejercicio similar al patrón anterior con poca ayuda. Si no sale, reforzar sin culpabilizar.
+16. **Pistas graduadas.** Cuando Sergi pida ayuda, dar niveles: concepto -> estructura incompleta -> línea casi completa -> solución solo si la pide.
+17. **Fluidez por repetición.** Si un concepto combina varias piezas (`items()`, tuplas, índices, `sorted`, `lambda`, slicing), tratarlo como patrón de fluidez y practicarlo en ejemplos pequeños antes de usarlo en proyecto.
 
 ## Lecciones aprendidas
 
@@ -108,6 +112,12 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 - Sergi explicó correctamente que `pareja[0]` es la clave/palabra y `pareja[1]` es el valor/frecuencia; esa comprensión permite ordenar por top.
 - Se añadió normalización mínima con `.strip(".,")`; mantener el alcance pequeño para no abrir todavía regex ni limpieza avanzada de texto.
 - Próximo paso recomendado: `TextAnalyzer` v0.3 con decorador `@medir_tiempo`, conectando con decoradores ya practicados y sin introducir estructura `if __name__ == "__main__"` todavía.
+
+### Ajuste pedagógico acordado 2026-06-18
+- Sergi observó que no habría sacado `lambda` dentro de `sorted()` sin explicación; diagnóstico: no es falta de capacidad, sino patrón visto pero no automatizado.
+- Nueva práctica por defecto: añadir calentamiento de patrones anteriores y repetición espaciada antes de avanzar.
+- Para `TextAnalyzer v0.3`, antes de empezar `@medir_tiempo`, repasar con mini-ejemplo `dict -> items() -> sorted(key=lambda ...) -> slicing`.
+- Crear y mantener una chuleta corta de patrones Python para consulta rápida durante clase.
 
 ## Sistema de memoria
 Al inicio de cada sesión, leer `perfil-aprendiz.md`, `estado-actual.md` y este fichero para retomar contexto completo.
