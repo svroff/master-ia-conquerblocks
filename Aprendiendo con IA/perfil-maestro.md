@@ -102,5 +102,12 @@ Trabajo en equipo a largo plazo — múltiples sesiones, múltiples proyectos.
 - Error del maestro: al dar una pista sobre ordenar, escribió una línea demasiado completa de `sorted(..., key=lambda..., reverse=True)`. Regla reforzada: si Sergi pide pistas, no escribir la solución completa; dar conceptos, posiciones, nombres de herramientas y huecos para que él complete.
 - Próximo paso recomendado: retomar desde ordenar `conteo_palabras.items()` por frecuencia, recordando que `sorted(key=...)` ya se vio en lambdas pero puede estar oxidado.
 
+### Sesión 2026-06-18 — Cierre de TextAnalyzer v0.2
+- Duración de la clase: 45 minutos.
+- Funcionó bien enseñar ordenación por frecuencia en capas: ver `dict_items`, entender tuplas `(palabra, frecuencia)`, probar `sorted()` alfabético, añadir `key=lambda pareja: pareja[1]`, añadir `reverse=True`, y finalmente `[:5]`.
+- Sergi explicó correctamente que `pareja[0]` es la clave/palabra y `pareja[1]` es el valor/frecuencia; esa comprensión permite ordenar por top.
+- Se añadió normalización mínima con `.strip(".,")`; mantener el alcance pequeño para no abrir todavía regex ni limpieza avanzada de texto.
+- Próximo paso recomendado: `TextAnalyzer` v0.3 con decorador `@medir_tiempo`, conectando con decoradores ya practicados y sin introducir estructura `if __name__ == "__main__"` todavía.
+
 ## Sistema de memoria
 Al inicio de cada sesión, leer `perfil-aprendiz.md`, `estado-actual.md` y este fichero para retomar contexto completo.

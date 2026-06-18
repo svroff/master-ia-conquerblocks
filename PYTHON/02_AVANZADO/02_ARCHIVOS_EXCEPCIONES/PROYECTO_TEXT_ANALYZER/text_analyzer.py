@@ -59,7 +59,7 @@ def contar_basico(ruta):
 # Crear una nueva funcion que lea un archivo de texto y devuelva las 5 palabras
 # que mas se repiten.
 #
-# Pistas para la proxima clase:
+# Pasos practicados:
 # 1. Leer el contenido del archivo con `with open(...)`.
 # 2. Convertir el texto a minusculas con `.lower()`.
 # 3. Separar el texto en palabras con `.split()`.
@@ -80,15 +80,21 @@ def contar_palabras(ruta):
 
     conteo_palabras = {}
     for p in leer_archivo_palabras_separadas:
-        if p in conteo_palabras:
-            conteo_palabras[p] += 1
+        palabra_limpia = p.strip(".,")
+        if palabra_limpia in conteo_palabras:
+            conteo_palabras[palabra_limpia] += 1
         else:
-            conteo_palabras[p] = 1
+            conteo_palabras[palabra_limpia] = 1
 
-    return conteo_palabras
+    palabras_ordenadas = sorted(
+        conteo_palabras.items(), key=lambda pareja: pareja[1], reverse=True
+    )
+    top_5 = palabras_ordenadas[:5]
+    return top_5
 
 
-palabras_frecuentes = contar_palabras(
+top_palabras = contar_palabras(
     "/home/horus/Documentos/master-ia-conquerblocks/PYTHON/02_AVANZADO/02_ARCHIVOS_EXCEPCIONES/PROYECTO_TEXT_ANALYZER/samples/ejemplo.txt"
 )
-print(palabras_frecuentes)
+
+print(top_palabras)

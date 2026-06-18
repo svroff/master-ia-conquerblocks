@@ -1,7 +1,7 @@
 # Estado Actual de Aprendizaje
 
 ## Dónde estoy
-Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos. `open()` con `with` practicado en modos `w`/`a`/`r`; lectura iterando con `for` + `.strip()` practicada. `f.read()`, `f.readline()` con `while`, `readlines()` y lectura con `for` practicados y comparados. `TextAnalyzer` v0.1 implementado con `contar_basico(ruta)`: abre fichero con `with`, lee con `.read()`, cuenta caracteres con `len()`, palabras con `.split()`, líneas con `.splitlines()` y devuelve un `dict`. `try/except FileNotFoundError` ya está aplicado a un `with open(...)` real dentro de `contar_basico`; si el archivo no existe, devuelve un `dict` con ceros para mantener el mismo tipo de retorno. `TextAnalyzer` v0.2 iniciado: `contar_palabras(ruta)` lee el fichero, normaliza a minúsculas, separa con `.split()` y devuelve un diccionario palabra -> número de apariciones. Próximo micro-paso: ordenar las parejas del diccionario por frecuencia y sacar top 5 sin chivar la solución completa.
+Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `learning/excepciones`. Decoradores cerrado. Excepciones iniciado: `try/except FileNotFoundError` practicado, diferencia modo texto/binario explicada, `.read()` practicado en ambos modos. `open()` con `with` practicado en modos `w`/`a`/`r`; lectura iterando con `for` + `.strip()` practicada. `f.read()`, `f.readline()` con `while`, `readlines()` y lectura con `for` practicados y comparados. `TextAnalyzer` v0.1 implementado con `contar_basico(ruta)`: abre fichero con `with`, lee con `.read()`, cuenta caracteres con `len()`, palabras con `.split()`, líneas con `.splitlines()` y devuelve un `dict`. `try/except FileNotFoundError` ya está aplicado a un `with open(...)` real dentro de `contar_basico`; si el archivo no existe, devuelve un `dict` con ceros para mantener el mismo tipo de retorno. `TextAnalyzer` v0.2 completado: `contar_palabras(ruta)` lee el fichero, normaliza a minúsculas, separa con `.split()`, limpia punto y coma con `.strip(".,")`, cuenta frecuencias con diccionario, ordena `conteo_palabras.items()` con `sorted(..., key=lambda pareja: pareja[1], reverse=True)` y devuelve `top_5` con slicing `[:5]`. Próximo micro-paso: empezar `TextAnalyzer` v0.3 con decorador `@medir_tiempo`, conectando con decoradores ya vistos.
 
 ## Qué acabo de aprender
 - Lambdas: funciones anónimas, map(), filter(), sorted(key=...). Bien consolidado.
@@ -279,3 +279,18 @@ Tema 3 de Python Avanzado — Manejo de Archivos y Excepciones. Rama activa: `le
 - El maestro fue demasiado rápido al iniciar la clase; Sergi pidió parar y recapitular dónde estábamos. Regla reforzada: después de pausa o cambio de sesión, reubicar primero el mapa del proyecto antes de pedir código.
 - Sergi pidió pistas para ordenar sin que se le resolviera. El maestro dio una línea demasiado completa con `sorted(..., key=lambda..., reverse=True)`, incumpliendo la regla de no chivar solución. Regla reforzada: cuando Sergi pida pistas, dar solo piezas conceptuales y dejar huecos reales.
 - Buen avance del alumno: llegó por sí mismo a tener una función que devuelve un diccionario con cada palabra y sus apariciones.
+
+## Ejercicios completados (sesión 2026-06-18)
+- Duración de la clase: 45 minutos.
+- Cerrado `TextAnalyzer` v0.2: top 5 palabras más frecuentes. ✅
+- Practicado `conteo_palabras.items()` como vista de parejas `(palabra, frecuencia)`. ✅
+- Reforzado que en cada pareja `pareja[0]` es la palabra y `pareja[1]` es la frecuencia. ✅
+- Ordenado el conteo con `sorted(..., key=lambda pareja: pareja[1], reverse=True)`. ✅
+- Aplicado slicing `[:5]` para devolver solo las cinco primeras parejas. ✅
+- Añadida normalización mínima con `.strip(".,")` para quitar punto y coma alrededor de cada palabra antes de contar. ✅
+
+## Sensaciones de sesión (2026-06-18)
+- Sesión corta y clara, con avance por micro-pasos sin saturación.
+- Sergi entendió correctamente por qué se ordena por `pareja[1]`: la posición `0` es clave/palabra y la posición `1` es valor/frecuencia.
+- La estrategia de no chivar la solución completa funcionó mejor: primero visualizar `items()`, luego ordenar por defecto, después añadir `key`, `reverse` y slicing.
+- Próximo paso recomendado: `TextAnalyzer` v0.3 con decorador `@medir_tiempo`, reutilizando el bloque de decoradores ya consolidado.

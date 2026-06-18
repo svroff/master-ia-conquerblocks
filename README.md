@@ -24,10 +24,11 @@ El objetivo no es solo guardar ejercicios: este repo documenta el progreso real 
 - Practicados `try/except FileNotFoundError`, `open()`, `with`, modos `w`, `a`, `r` y lectura de ficheros.
 - Comparadas cuatro formas de lectura: `read()`, `readline()` con `while`, `readlines()` y `for linea in f`.
 - Implementado `TextAnalyzer v0.1`: conteo de líneas, palabras y caracteres desde un fichero de texto, con manejo de `FileNotFoundError`.
+- Implementado `TextAnalyzer v0.2`: top 5 palabras más frecuentes con normalización mínima de punto y coma.
 
 Próximos pasos:
 
-- Empezar `TextAnalyzer v0.2`: top 5 palabras con normalización mínima.
+- Empezar `TextAnalyzer v0.3`: decorador `@medir_tiempo`.
 - Más adelante: JSON, modos avanzados de fichero, NumPy, Pandas y POO.
 
 ---
@@ -101,12 +102,13 @@ Carpeta: [`PROYECTO_TEXT_ANALYZER`](./PYTHON/02_AVANZADO/02_ARCHIVOS_EXCEPCIONES
 
 Primer proyecto integrador del bloque de Python Avanzado. Une funciones, lectura de ficheros, strings, listas, diccionarios y validación por capas.
 
-Versión actual: **v0.1 completada**
+Versión actual: **v0.2 completada**
 
-Función implementada:
+Funciones implementadas:
 
 ```python
 contar_basico(ruta)
+contar_palabras(ruta)
 ```
 
 Devuelve un diccionario con tres métricas:
@@ -124,7 +126,7 @@ Roadmap del proyecto:
 | Versión | Estado | Objetivo |
 |---------|--------|----------|
 | v0.1 | Completada | Contar líneas, palabras y caracteres |
-| v0.2 | Próxima | Top 5 palabras más frecuentes |
+| v0.2 | Completada | Top 5 palabras más frecuentes |
 | v0.3 | Próxima | Decorador `@medir_tiempo` |
 | v0.4 | Próxima | Excepciones en lectura de ficheros |
 | v0.5 | Próxima | Analizar varios ficheros |
