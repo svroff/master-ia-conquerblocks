@@ -37,10 +37,8 @@ Próximos pasos:
 
 ```text
 master-ia-conquerblocks/
-├── .opencode/
-│   └── agent/
-│       └── maestro.md
-├── Aprendiendo con IA/
+├── CLAUDE.md
+├── memoria-aprendizaje/
 │   ├── perfil-aprendiz.md
 │   ├── estado-actual.md
 │   └── perfil-maestro.md
@@ -54,7 +52,6 @@ master-ia-conquerblocks/
 │   │       └── PROYECTO_TEXT_ANALYZER/
 │   └── bitacora/
 │       └── sesiones.log
-├── opencode.json
 └── README.md
 ```
 
@@ -136,7 +133,7 @@ Roadmap del proyecto:
 
 ## Memoria De Aprendizaje
 
-La carpeta [`Aprendiendo con IA`](./Aprendiendo%20con%20IA/) guarda el sistema de continuidad de estudio:
+La carpeta [`memoria-aprendizaje`](./memoria-aprendizaje/) guarda el sistema de continuidad de estudio:
 
 - `perfil-aprendiz.md`: cómo aprende Sergi, preferencias y reglas de tutoría.
 - `estado-actual.md`: punto exacto del temario y resumen de sesiones.
@@ -146,24 +143,24 @@ La bitácora resumida vive en [`PYTHON/bitacora/sesiones.log`](./PYTHON/bitacora
 
 ---
 
-## OpenCode Maestro
+## Maestro en Claude Code
 
-Este repo incluye el agente [`maestro`](./.opencode/agent/maestro.md), usado para retomar clases con contexto real del aprendizaje.
+Este repo incluye [`CLAUDE.md`](./CLAUDE.md), instrucciones de proyecto que Claude Code carga automáticamente y que definen el rol de "maestro" (estilo de tutoría, guardarraíles, protocolo de inicio y cierre de clase).
 
 En cualquier equipo:
 
 ```bash
 git pull
-opencode
+claude
 ```
 
-Dentro de OpenCode:
+Dentro de Claude Code:
 
 ```text
 Continuamos clase
 ```
 
-El agente lee la memoria de aprendizaje, revisa Git y retoma desde el siguiente micro-paso.
+Claude lee la memoria de aprendizaje, revisa Git y retoma desde el siguiente micro-paso.
 
 ---
 
