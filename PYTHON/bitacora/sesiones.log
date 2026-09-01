@@ -1,0 +1,7 @@
+2026-06-01  30min  with, modos a/w/r/x, rutas y lectura linea a linea ✅  tests:0/0
+2026-06-05  45min  f.read() y readline(), len/str.count, esqueleto TextAnalyzer ✅  tests:0/0
+2026-06-05  43min  readline+while+numerar, readlines, comparativa 4 formas, housekeeping memoria ✅  tests:0/0
+2026-06-09  55min  TextAnalyzer v0.1, conteo basico, retorno dict y validacion sample ✅  tests:1/1
+2026-06-12  60min  TextAnalyzer v0.1 robusto con try/except FileNotFoundError y retorno dict seguro ✅  tests:2/2
+2026-06-16  60min  TextAnalyzer v0.2 conteo de palabras con dict, lower() y split() ✅  tests:2/2
+2026-06-18  45min  TextAnalyzer v0.2 cerrado: top 5 palabras con sorted(key=lambda, reverse=True) y slicing ✅  tests:2/2
