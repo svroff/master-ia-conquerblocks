@@ -1,0 +1,100 @@
+"""
+EJERCICIO: Analizador de Texto Básico (v0.1)
+===========================================
+
+OBJETIVO:
+Completa la función 'contar_basico' para que lea un archivo de texto,
+cuente sus elementos y devuelva un diccionario con las métricas.
+
+ENTRADA:
+- ruta (str): Ubicación del archivo de texto.
+
+SALIDA:
+- dict: Debe contener exactamente estas tres claves:
+    {
+        "lineas": int,
+        "palabras": int,
+        "caracteres": int
+    }
+
+PISTAS PASO A PASO:
+1. Usa `with open(ruta, "r", encoding="utf-8") as archivo:` para abrirlo.
+2. Lee todo el texto en una variable usando `archivo.read()`.
+3. Para los caracteres, mide la longitud total del texto con `len()`.
+4. Para las palabras, usa el método `.split()` del texto y mide el resultado.
+5. Para las líneas, usa el método `.splitlines()` del texto y mide el resultado.
+6. Devuelve el diccionario estructurado con los tres datos numéricos.
+"""
+
+
+def contar_basico(ruta):
+    # 1. Abre el archivo y guarda su contenido en una variable
+    try:
+        with open(ruta, "r", encoding="utf-8") as archivo:
+            leer_archivo = archivo.read()
+    except FileNotFoundError:
+        print("Archivo no encontrado.\n")
+        return {
+            "lineas": 0,
+            "palabras": 0,
+            "caracteres": 0,
+        }
+
+    # 2. Cuenta los caracteres, palabras y lineas del texto leido
+    caracteres_totales = len(leer_archivo)
+    palabras_totales = len(leer_archivo.split())
+    lineas_totales = len(leer_archivo.splitlines())
+
+    # 3. Devuelve el diccionario con los resultados
+    return {
+        "lineas": lineas_totales,
+        "palabras": palabras_totales,
+        "caracteres": caracteres_totales,
+    }
+
+
+# EJERCICIO v0.2: Top 5 palabras mas frecuentes
+# =================================================
+# Objetivo:
+# Crear una nueva funcion que lea un archivo de texto y devuelva las 5 palabras
+# que mas se repiten.
+#
+# Pasos practicados:
+# 1. Leer el contenido del archivo con `with open(...)`.
+# 2. Convertir el texto a minusculas con `.lower()`.
+# 3. Separar el texto en palabras con `.split()`.
+# 4. Usar un diccionario para contar cuantas veces aparece cada palabra.
+# 5. Ordenar el diccionario por frecuencia.
+# 6. Devolver solo las 5 primeras palabras.
+
+
+def contar_palabras(ruta):
+    try:
+        with open(ruta, "r", encoding="utf-8") as archivo:
+            leer_archivo = archivo.read()
+            leer_archivo = leer_archivo.lower()
+            leer_archivo_palabras_separadas = leer_archivo.split()
+    except FileNotFoundError:
+        print("Archivo no encontrado. \n")
+        return {"palabras": 0}
+
+    conteo_palabras = {}
+    for p in leer_archivo_palabras_separadas:
+        palabra_limpia = p.strip(".,")
+        if palabra_limpia in conteo_palabras:
+            conteo_palabras[palabra_limpia] += 1
+        else:
+            conteo_palabras[palabra_limpia] = 1
+
+    palabras_ordenadas = sorted(
+        conteo_palabras.items(), key=lambda pareja: pareja[1], reverse=True
+    )
+    top_5 = palabras_ordenadas[:5]
+    return top_5
+
+
+top_palabras = contar_palabras(
+    "/home/horus/Documentos/master-ia-conquerblocks/PYTHON/02_AVANZADO/02_ARCHIVOS_EXCEPCIONES/PROYECTO_TEXT_ANALYZER/samples/ejemplo.txt"
+)
+
+print(top_palabras)

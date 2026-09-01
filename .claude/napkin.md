@@ -15,7 +15,13 @@
    Do instead: run class Git commands with `workdir=/home/horus/Documentos/master-ia-conquerblocks`.
 
 ## Domain Behavior Guardrails
-1. **[2026-05-26] Teach by micro-steps**
+1. **[2026-06-05] Maestro enters directories, Sergi does not**
+   Do instead: use Read/Bash/Glob to inspect files, verify state, and check outputs myself; never ask Sergi to run `cat`, `od`, `find` or paste raw file contents unless he volunteers.
+2. **[2026-06-12] Do not introduce untaught structure**
+   Do instead: avoid `if __name__ == "__main__"`, `pathlib`, or other future-topic structure until taught; keep scripts simple at current level.
+3. **[2026-06-12] Decide return contract before exceptions**
+   Do instead: before adding `try/except` inside a function, decide what type the function must return on success and error.
+4. **[2026-05-26] Teach by micro-steps**
    Do instead: explain concept first, let Sergi type practice code, and avoid giving full solution unless requested.
 
 ## User Directives

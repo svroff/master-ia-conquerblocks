@@ -1,0 +1,7 @@
+Python es un lenguaje de programacion.
+Python es facil de leer y escribir.
+Con Python se pueden hacer scripts pequenos o proyectos grandes.
+Python usa espacios para organizar el codigo, no llaves.
+Python tiene listas, diccionarios, conjuntos y tuplas.
+Practicar Python cada dia ayuda a pensar mejor.
+Python es el lenguaje elegido para inteligencia artificial.
